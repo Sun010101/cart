@@ -1,12 +1,12 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://www.ilovemyheart.org/cart/');
+define('HTTP_SERVER', 'http://167.179.90.100/cart/');
 // HTTPS
-define('HTTPS_SERVER', 'http://www.ilovemyheart.org/cart/');
+define('HTTPS_SERVER', 'http://167.179.90.100/cart/');
 // DIR
-define('DIR_APPLICATION', '/home/ilovemyheart/public_html/cart/catalog/');
-define('DIR_SYSTEM', '/home/ilovemyheart/public_html/cart/system/');
-define('DIR_IMAGE', '/home/ilovemyheart/public_html/cart/image/');
+define('DIR_APPLICATION', '/var/www/html/cart/catalog/');
+define('DIR_SYSTEM', '/var/www/html/cart/system/');
+define('DIR_IMAGE', '/var/www/html/cart/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storager3li728tg11x/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');
@@ -21,8 +21,8 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'i3602736_op1');
-define('DB_PASSWORD', 'O.mjQhvY1MVqg4b5kXy68');
-define('DB_DATABASE', 'i3602736_op1');
+define('DB_USERNAME', 'esbcocadmin');
+define('DB_PASSWORD', 'esbcochappy');
+define('DB_DATABASE', 'esbcoc_shop1');
 define('DB_PREFIX', 'op_');
 define('DB_PORT', '3306');

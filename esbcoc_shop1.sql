@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost:3306
--- 產生時間： 2018 年 12 月 01 日 20:23
--- 伺服器版本: 5.6.39-cll-lve
--- PHP 版本： 5.6.30
+-- 產生時間： 2018 年 12 月 04 日 01:39
+-- 伺服器版本: 5.7.24-0ubuntu0.18.10.1
+-- PHP 版本： 7.2.12-1+ubuntu18.10.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `i3602736_op1`
+-- 資料庫： `esbcoc_shop1`
 --
 
 -- --------------------------------------------------------
@@ -148,7 +146,18 @@ INSERT INTO `op_attribute_description` (`attribute_id`, `language_id`, `name`) V
 (9, 1, 'test 6'),
 (10, 1, 'test 7'),
 (11, 1, 'test 8'),
-(3, 1, 'Clockspeed');
+(3, 1, 'Clockspeed'),
+(1, 2, 'Description'),
+(2, 2, 'No. of Cores'),
+(4, 2, 'test 1'),
+(5, 2, 'test 2'),
+(6, 2, 'test 3'),
+(7, 2, 'test 4'),
+(8, 2, 'test 5'),
+(9, 2, 'test 6'),
+(10, 2, 'test 7'),
+(11, 2, 'test 8'),
+(3, 2, 'Clockspeed');
 
 -- --------------------------------------------------------
 
@@ -191,7 +200,11 @@ INSERT INTO `op_attribute_group_description` (`attribute_group_id`, `language_id
 (3, 1, 'Memory'),
 (4, 1, 'Technical'),
 (5, 1, 'Motherboard'),
-(6, 1, 'Processor');
+(6, 1, 'Processor'),
+(3, 2, 'Memory'),
+(4, 2, 'Technical'),
+(5, 2, 'Motherboard'),
+(6, 2, 'Processor');
 
 -- --------------------------------------------------------
 
@@ -248,7 +261,21 @@ INSERT INTO `op_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `t
 (90, 8, 1, 'Disney', '', 'catalog/demo/manufacturer/disney.png', 0),
 (80, 7, 1, 'MacBookAir', '', 'catalog/demo/banners/MacBookAir.jpg', 0),
 (97, 8, 1, 'Starbucks', '', 'catalog/demo/manufacturer/starbucks.png', 0),
-(98, 8, 1, 'Nintendo', '', 'catalog/demo/manufacturer/nintendo.png', 0);
+(98, 8, 1, 'Nintendo', '', 'catalog/demo/manufacturer/nintendo.png', 0),
+(99, 7, 2, 'iPhone 6', 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/banners/iPhone6.jpg', 0),
+(100, 6, 2, 'HP Banner', 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/compaq_presario.jpg', 0),
+(101, 8, 2, 'NFL', '', 'catalog/demo/manufacturer/nfl.png', 0),
+(102, 8, 2, 'RedBull', '', 'catalog/demo/manufacturer/redbull.png', 0),
+(103, 8, 2, 'Sony', '', 'catalog/demo/manufacturer/sony.png', 0),
+(104, 8, 2, 'Coca Cola', '', 'catalog/demo/manufacturer/cocacola.png', 0),
+(105, 8, 2, 'Burger King', '', 'catalog/demo/manufacturer/burgerking.png', 0),
+(106, 8, 2, 'Canon', '', 'catalog/demo/manufacturer/canon.png', 0),
+(107, 8, 2, 'Harley Davidson', '', 'catalog/demo/manufacturer/harley.png', 0),
+(108, 8, 2, 'Dell', '', 'catalog/demo/manufacturer/dell.png', 0),
+(109, 8, 2, 'Disney', '', 'catalog/demo/manufacturer/disney.png', 0),
+(110, 7, 2, 'MacBookAir', '', 'catalog/demo/banners/MacBookAir.jpg', 0),
+(111, 8, 2, 'Starbucks', '', 'catalog/demo/manufacturer/starbucks.png', 0),
+(112, 8, 2, 'Nintendo', '', 'catalog/demo/manufacturer/nintendo.png', 0);
 
 -- --------------------------------------------------------
 
@@ -388,7 +415,45 @@ INSERT INTO `op_category_description` (`category_id`, `language_id`, `name`, `de
 (55, 1, 'test 23', '', 'test 23', '', ''),
 (56, 1, 'test 24', '', 'test 24', '', ''),
 (57, 1, 'Tablets', '', 'Tablets', '', ''),
-(58, 1, 'test 25', '', 'test 25', '', '');
+(58, 1, 'test 25', '', 'test 25', '', ''),
+(28, 2, 'Monitors', '', 'Monitors', '', ''),
+(33, 2, 'Cameras', '', 'Cameras', '', ''),
+(32, 2, 'Web Cameras', '', 'Web Cameras', '', ''),
+(31, 2, 'Scanners', '', 'Scanners', '', ''),
+(30, 2, 'Printers', '', 'Printers', '', ''),
+(29, 2, 'Mice and Trackballs', '', 'Mice and Trackballs', '', ''),
+(27, 2, 'Mac', '', 'Mac', '', ''),
+(26, 2, 'PC', '', 'PC', '', ''),
+(17, 2, 'Software', '', 'Software', '', ''),
+(25, 2, 'Components', '', 'Components', '', ''),
+(24, 2, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
+(20, 2, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
+(35, 2, 'test 1', '', 'test 1', '', ''),
+(36, 2, 'test 2', '', 'test 2', '', ''),
+(37, 2, 'test 5', '', 'test 5', '', ''),
+(38, 2, 'test 4', '', 'test 4', '', ''),
+(39, 2, 'test 6', '', 'test 6', '', ''),
+(40, 2, 'test 7', '', 'test 7', '', ''),
+(41, 2, 'test 8', '', 'test 8', '', ''),
+(42, 2, 'test 9', '', 'test 9', '', ''),
+(43, 2, 'test 11', '', 'test 11', '', ''),
+(34, 2, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
+(18, 2, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
+(44, 2, 'test 12', '', 'test 12', '', ''),
+(45, 2, 'Windows', '', 'Windows', '', ''),
+(46, 2, 'Macs', '', 'Macs', '', ''),
+(47, 2, 'test 15', '', 'test 15', '', ''),
+(48, 2, 'test 16', '', 'test 16', '', ''),
+(49, 2, 'test 17', '', 'test 17', '', ''),
+(50, 2, 'test 18', '', 'test 18', '', ''),
+(51, 2, 'test 19', '', 'test 19', '', ''),
+(52, 2, 'test 20', '', 'test 20', '', ''),
+(53, 2, 'test 21', '', 'test 21', '', ''),
+(54, 2, 'test 22', '', 'test 22', '', ''),
+(55, 2, 'test 23', '', 'test 23', '', ''),
+(56, 2, 'test 24', '', 'test 24', '', ''),
+(57, 2, 'Tablets', '', 'Tablets', '', ''),
+(58, 2, 'test 25', '', 'test 25', '', '');
 
 -- --------------------------------------------------------
 
@@ -1051,7 +1116,8 @@ CREATE TABLE `op_customer_group_description` (
 --
 
 INSERT INTO `op_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
-(1, 1, 'Default', 'test');
+(1, 1, 'Default', 'test'),
+(1, 2, 'Default', 'test');
 
 -- --------------------------------------------------------
 
@@ -1370,7 +1436,10 @@ INSERT INTO `op_extension` (`extension_id`, `type`, `code`) VALUES
 (38, 'report', 'sale_tax'),
 (39, 'report', 'customer_activity'),
 (40, 'report', 'customer_order'),
-(41, 'report', 'customer_reward');
+(41, 'report', 'customer_reward'),
+(43, 'module', 'pavothemer'),
+(44, 'module', 'pavobuilder'),
+(45, 'module', 'pavoheader');
 
 -- --------------------------------------------------------
 
@@ -1385,6 +1454,13 @@ CREATE TABLE `op_extension_install` (
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 資料表的匯出資料 `op_extension_install`
+--
+
+INSERT INTO `op_extension_install` (`extension_install_id`, `extension_download_id`, `filename`, `date_added`) VALUES
+(2, 0, 'x-traditional-chinese-hong-kong-oc3.ocmod.zip', '2018-12-02 06:00:34');
+
 -- --------------------------------------------------------
 
 --
@@ -1397,6 +1473,946 @@ CREATE TABLE `op_extension_path` (
   `path` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `op_extension_path`
+--
+
+INSERT INTO `op_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
+(392, 0, 'system/library/csscompressor.php', '2018-12-02 05:42:31'),
+(393, 0, 'system/library/pavo_pagination.php', '2018-12-02 05:42:31'),
+(394, 0, 'system/library/rtlcss.php', '2018-12-02 05:42:31'),
+(395, 0, 'admin/model/extension/pavobuilder', '2018-12-02 05:42:31'),
+(396, 0, 'admin/model/extension/pavothemer', '2018-12-02 05:42:31'),
+(397, 0, 'admin/view/javascript/pavobuilder', '2018-12-02 05:42:31'),
+(398, 0, 'admin/view/javascript/pavothemer', '2018-12-02 05:42:31'),
+(399, 0, 'admin/view/stylesheet/pavobuilder', '2018-12-02 05:42:31'),
+(400, 0, 'admin/view/stylesheet/pavothemer', '2018-12-02 05:42:31'),
+(401, 0, 'catalog/view/javascript/instafeed.js', '2018-12-02 05:42:31'),
+(402, 0, 'catalog/view/javascript/jquery.countdown.min.js', '2018-12-02 05:42:31'),
+(403, 0, 'catalog/view/javascript/owl-carousel', '2018-12-02 05:42:31'),
+(404, 0, 'catalog/view/javascript/pavobuilder', '2018-12-02 05:42:31'),
+(405, 0, 'catalog/view/javascript/threesixty', '2018-12-02 05:42:31'),
+(406, 0, 'admin/controller/extension/module/pavobuilder.php', '2018-12-02 05:42:31'),
+(407, 0, 'admin/controller/extension/module/pavoheader.php', '2018-12-02 05:42:31'),
+(408, 0, 'admin/controller/extension/module/pavothemer', '2018-12-02 05:42:31'),
+(409, 0, 'admin/controller/extension/module/pavothemer.php', '2018-12-02 05:42:31'),
+(410, 0, 'admin/controller/extension/module/vendors', '2018-12-02 05:42:31'),
+(411, 0, 'admin/model/extension/pavobuilder/pavobuilder.php', '2018-12-02 05:42:31'),
+(412, 0, 'admin/model/extension/pavothemer/backup.php', '2018-12-02 05:42:31'),
+(413, 0, 'admin/model/extension/pavothemer/restore.php', '2018-12-02 05:42:31'),
+(414, 0, 'admin/model/extension/pavothemer/sample.php', '2018-12-02 05:42:31'),
+(415, 0, 'admin/view/javascript/jquery/colorpicker', '2018-12-02 05:42:31'),
+(416, 0, 'admin/view/javascript/jquery/index.html', '2018-12-02 05:42:31'),
+(417, 0, 'admin/view/javascript/pavobuilder/dist', '2018-12-02 05:42:31'),
+(418, 0, 'admin/view/javascript/pavobuilder/group-search.js', '2018-12-02 05:42:31'),
+(419, 0, 'admin/view/javascript/pavobuilder/information.js', '2018-12-02 05:42:31'),
+(420, 0, 'admin/view/javascript/pavobuilder/pavobuilder.js', '2018-12-02 05:42:31'),
+(421, 0, 'admin/view/javascript/pavobuilder/src', '2018-12-02 05:42:31'),
+(422, 0, 'admin/view/javascript/pavothemer/customize.js', '2018-12-02 05:42:31'),
+(423, 0, 'admin/view/javascript/pavothemer/dist', '2018-12-02 05:42:31'),
+(424, 0, 'admin/view/javascript/pavothemer/management.js', '2018-12-02 05:42:31'),
+(425, 0, 'admin/view/javascript/pavothemer/pavothemer.js', '2018-12-02 05:42:31'),
+(426, 0, 'admin/view/javascript/pavothemer/settings.js', '2018-12-02 05:42:31'),
+(427, 0, 'admin/view/javascript/pavothemer/src', '2018-12-02 05:42:31'),
+(428, 0, 'admin/view/stylesheet/pavobuilder/dist', '2018-12-02 05:42:31'),
+(429, 0, 'admin/view/stylesheet/pavobuilder/images', '2018-12-02 05:42:31'),
+(430, 0, 'admin/view/stylesheet/pavobuilder/pavobuilder.scss', '2018-12-02 05:42:31'),
+(431, 0, 'admin/view/stylesheet/pavobuilder/sass', '2018-12-02 05:42:31'),
+(432, 0, 'admin/view/stylesheet/pavothemer/api.css', '2018-12-02 05:42:31'),
+(433, 0, 'admin/view/stylesheet/pavothemer/customize.scss', '2018-12-02 05:42:31'),
+(434, 0, 'admin/view/stylesheet/pavothemer/dist', '2018-12-02 05:42:31'),
+(435, 0, 'admin/view/stylesheet/pavothemer/images', '2018-12-02 05:42:31'),
+(436, 0, 'admin/view/stylesheet/pavothemer/tool.scss', '2018-12-02 05:42:31'),
+(437, 0, 'catalog/controller/extension/module/pavobuilder', '2018-12-02 05:42:31'),
+(438, 0, 'catalog/controller/extension/module/pavobuilder.php', '2018-12-02 05:42:31'),
+(439, 0, 'catalog/controller/extension/module/pavoheader.php', '2018-12-02 05:42:31'),
+(440, 0, 'catalog/controller/extension/module/pavothemer.php', '2018-12-02 05:42:31'),
+(441, 0, 'catalog/model/extension/module/pavobuilder.php', '2018-12-02 05:42:31'),
+(442, 0, 'catalog/model/extension/module/pavothemer.php', '2018-12-02 05:42:31'),
+(443, 0, 'catalog/view/javascript/owl-carousel/css', '2018-12-02 05:42:31'),
+(444, 0, 'catalog/view/javascript/owl-carousel/owl.carousel.js', '2018-12-02 05:42:31'),
+(445, 0, 'catalog/view/javascript/owl-carousel/owl.carousel.min.js', '2018-12-02 05:42:31'),
+(446, 0, 'catalog/view/javascript/owl-carousel/owl2rows.js', '2018-12-02 05:42:31'),
+(447, 0, 'catalog/view/javascript/pavobuilder/dist', '2018-12-02 05:42:31'),
+(448, 0, 'catalog/view/javascript/pavobuilder/pavobuilder.js', '2018-12-02 05:42:31'),
+(449, 0, 'catalog/view/javascript/pavobuilder/pavobuilder.scss', '2018-12-02 05:42:31'),
+(450, 0, 'catalog/view/javascript/pavobuilder/sass', '2018-12-02 05:42:31'),
+(451, 0, 'catalog/view/javascript/pavobuilder/src', '2018-12-02 05:42:31'),
+(452, 0, 'catalog/view/javascript/threesixty/threesixty.css', '2018-12-02 05:42:31'),
+(453, 0, 'catalog/view/javascript/threesixty/threesixty.min.js', '2018-12-02 05:42:31'),
+(454, 0, 'admin/controller/extension/module/pavothemer/config.php', '2018-12-02 05:42:31'),
+(455, 0, 'admin/controller/extension/module/pavothemer/helper', '2018-12-02 05:42:31'),
+(456, 0, 'admin/controller/extension/module/pavothemer/pavothemer.php', '2018-12-02 05:42:31'),
+(457, 0, 'admin/controller/extension/module/pavothemer/webfonts.json', '2018-12-02 05:42:31'),
+(458, 0, 'admin/controller/extension/module/vendors/scssphp', '2018-12-02 05:42:31'),
+(459, 0, 'admin/language/en-gb/extension/module/pavobuilder.php', '2018-12-02 05:42:31'),
+(460, 0, 'admin/language/en-gb/extension/module/pavoheader.php', '2018-12-02 05:42:31'),
+(461, 0, 'admin/language/en-gb/extension/module/pavothemer.php', '2018-12-02 05:42:31'),
+(462, 0, 'admin/view/javascript/jquery/colorpicker/bootstrap-colorpicker.css', '2018-12-02 05:42:31'),
+(463, 0, 'admin/view/javascript/jquery/colorpicker/bootstrap-colorpicker.min.js', '2018-12-02 05:42:31'),
+(464, 0, 'admin/view/javascript/pavobuilder/dist/group-search.min.js', '2018-12-02 05:42:31'),
+(465, 0, 'admin/view/javascript/pavobuilder/dist/information.min.js', '2018-12-02 05:42:31'),
+(466, 0, 'admin/view/javascript/pavobuilder/dist/pavobuilder.min.js', '2018-12-02 05:42:31'),
+(467, 0, 'admin/view/javascript/pavobuilder/src/collections', '2018-12-02 05:42:31'),
+(468, 0, 'admin/view/javascript/pavobuilder/src/common', '2018-12-02 05:42:31'),
+(469, 0, 'admin/view/javascript/pavobuilder/src/models', '2018-12-02 05:42:31'),
+(470, 0, 'admin/view/javascript/pavobuilder/src/views', '2018-12-02 05:42:31'),
+(471, 0, 'admin/view/javascript/pavothemer/dist/customize.min.js', '2018-12-02 05:42:31'),
+(472, 0, 'admin/view/javascript/pavothemer/dist/management.min.js', '2018-12-02 05:42:31'),
+(473, 0, 'admin/view/javascript/pavothemer/dist/pavothemer.min.js', '2018-12-02 05:42:31'),
+(474, 0, 'admin/view/javascript/pavothemer/dist/settings.min.js', '2018-12-02 05:42:31'),
+(475, 0, 'admin/view/javascript/pavothemer/src/common.js', '2018-12-02 05:42:31'),
+(476, 0, 'admin/view/javascript/pavothemer/src/demo-import.js', '2018-12-02 05:42:31'),
+(477, 0, 'admin/view/javascript/pavothemer/src/fonts.js', '2018-12-02 05:42:31'),
+(478, 0, 'admin/view/javascript/pavothemer/src/theme-customize.js', '2018-12-02 05:42:31'),
+(479, 0, 'admin/view/stylesheet/pavobuilder/dist/pavobuilder.min.css', '2018-12-02 05:42:31'),
+(480, 0, 'admin/view/stylesheet/pavobuilder/images/1.gif', '2018-12-02 05:42:31'),
+(481, 0, 'admin/view/stylesheet/pavobuilder/images/2.gif', '2018-12-02 05:42:31'),
+(482, 0, 'admin/view/stylesheet/pavobuilder/images/2_8_2.gif', '2018-12-02 05:42:31'),
+(483, 0, 'admin/view/stylesheet/pavobuilder/images/3.gif', '2018-12-02 05:42:31'),
+(484, 0, 'admin/view/stylesheet/pavobuilder/images/4.gif', '2018-12-02 05:42:31'),
+(485, 0, 'admin/view/stylesheet/pavobuilder/images/4_8.gif', '2018-12-02 05:42:31'),
+(486, 0, 'admin/view/stylesheet/pavobuilder/images/8_4.gif', '2018-12-02 05:42:31'),
+(487, 0, 'admin/view/stylesheet/pavobuilder/sass/_animate.scss', '2018-12-02 05:42:31'),
+(488, 0, 'admin/view/stylesheet/pavobuilder/sass/_bootstrap.scss', '2018-12-02 05:42:31'),
+(489, 0, 'admin/view/stylesheet/pavobuilder/sass/_builder.scss', '2018-12-02 05:42:31'),
+(490, 0, 'admin/view/stylesheet/pavobuilder/sass/_elements.scss', '2018-12-02 05:42:31'),
+(491, 0, 'admin/view/stylesheet/pavobuilder/sass/_grid-framework.scss', '2018-12-02 05:42:31'),
+(492, 0, 'admin/view/stylesheet/pavobuilder/sass/_grid.scss', '2018-12-02 05:42:31'),
+(493, 0, 'admin/view/stylesheet/pavobuilder/sass/_variables.scss', '2018-12-02 05:42:31'),
+(494, 0, 'admin/view/stylesheet/pavobuilder/sass/elements', '2018-12-02 05:42:31'),
+(495, 0, 'admin/view/stylesheet/pavobuilder/sass/modal.scss', '2018-12-02 05:42:31'),
+(496, 0, 'admin/view/stylesheet/pavothemer/dist/customize.min.css', '2018-12-02 05:42:31'),
+(497, 0, 'admin/view/stylesheet/pavothemer/dist/skincreator.css', '2018-12-02 05:42:31'),
+(498, 0, 'admin/view/stylesheet/pavothemer/dist/tool.min.css', '2018-12-02 05:42:31'),
+(499, 0, 'admin/view/stylesheet/pavothemer/images/fonts.png', '2018-12-02 05:42:31'),
+(500, 0, 'admin/view/template/extension/module/pavobuilder', '2018-12-02 05:42:31'),
+(501, 0, 'admin/view/template/extension/module/pavothemer', '2018-12-02 05:42:31'),
+(502, 0, 'catalog/controller/extension/module/pavobuilder/inc', '2018-12-02 05:42:31'),
+(503, 0, 'catalog/controller/extension/module/pavobuilder/pavobuilder.php', '2018-12-02 05:42:31'),
+(504, 0, 'catalog/language/en-gb/extension/module/pavobuilder.php', '2018-12-02 05:42:31'),
+(505, 0, 'catalog/language/en-gb/extension/module/pavothemer.php', '2018-12-02 05:42:31'),
+(506, 0, 'catalog/view/javascript/owl-carousel/css/ajax-loader.gif', '2018-12-02 05:42:31'),
+(507, 0, 'catalog/view/javascript/owl-carousel/css/owl.carousel.css', '2018-12-02 05:42:31'),
+(508, 0, 'catalog/view/javascript/owl-carousel/css/owl.carousel.min.css', '2018-12-02 05:42:31'),
+(509, 0, 'catalog/view/javascript/owl-carousel/css/owl.theme.default.css', '2018-12-02 05:42:31'),
+(510, 0, 'catalog/view/javascript/owl-carousel/css/owl.theme.default.min.css', '2018-12-02 05:42:31'),
+(511, 0, 'catalog/view/javascript/owl-carousel/css/owl.theme.green.css', '2018-12-02 05:42:31'),
+(512, 0, 'catalog/view/javascript/owl-carousel/css/owl.theme.green.min.css', '2018-12-02 05:42:31'),
+(513, 0, 'catalog/view/javascript/owl-carousel/css/owl.video.play.png', '2018-12-02 05:42:31'),
+(514, 0, 'catalog/view/javascript/pavobuilder/dist/pavobuilder.min.css', '2018-12-02 05:42:31'),
+(515, 0, 'catalog/view/javascript/pavobuilder/dist/pavobuilder.min.js', '2018-12-02 05:42:31'),
+(516, 0, 'catalog/view/javascript/pavobuilder/sass/_animate.scss', '2018-12-02 05:42:31'),
+(517, 0, 'catalog/view/javascript/pavobuilder/sass/_bootstrap.scss', '2018-12-02 05:42:31'),
+(518, 0, 'catalog/view/javascript/pavobuilder/sass/_builder.scss', '2018-12-02 05:42:31'),
+(519, 0, 'catalog/view/javascript/pavobuilder/sass/_elements.scss', '2018-12-02 05:42:31'),
+(520, 0, 'catalog/view/javascript/pavobuilder/sass/_grid-framework.scss', '2018-12-02 05:42:31'),
+(521, 0, 'catalog/view/javascript/pavobuilder/sass/_grid.scss', '2018-12-02 05:42:31'),
+(522, 0, 'catalog/view/javascript/pavobuilder/sass/_variables.scss', '2018-12-02 05:42:31'),
+(523, 0, 'catalog/view/javascript/pavobuilder/sass/dist', '2018-12-02 05:42:31'),
+(524, 0, 'catalog/view/javascript/pavobuilder/sass/elements', '2018-12-02 05:42:31'),
+(525, 0, 'catalog/view/javascript/pavobuilder/src/google-map.js', '2018-12-02 05:42:31'),
+(526, 0, 'catalog/view/javascript/pavobuilder/src/video-responsive.js', '2018-12-02 05:42:31'),
+(527, 0, 'catalog/view/theme/default/image/layout-1.png', '2018-12-02 05:42:31'),
+(528, 0, 'catalog/view/theme/default/image/layout-2.png', '2018-12-02 05:42:31'),
+(529, 0, 'catalog/view/theme/default/image/layout-3.png', '2018-12-02 05:42:31'),
+(530, 0, 'admin/controller/extension/module/pavothemer/helper/api.php', '2018-12-02 05:42:31'),
+(531, 0, 'admin/controller/extension/module/pavothemer/helper/sample.php', '2018-12-02 05:42:31'),
+(532, 0, 'admin/controller/extension/module/pavothemer/helper/settings.php', '2018-12-02 05:42:31'),
+(533, 0, 'admin/controller/extension/module/pavothemer/helper/skincreator.php', '2018-12-02 05:42:31'),
+(534, 0, 'admin/controller/extension/module/pavothemer/helper/theme.php', '2018-12-02 05:42:31'),
+(535, 0, 'admin/controller/extension/module/vendors/scssphp/LICENSE.md', '2018-12-02 05:42:31'),
+(536, 0, 'admin/controller/extension/module/vendors/scssphp/README.md', '2018-12-02 05:42:31'),
+(537, 0, 'admin/controller/extension/module/vendors/scssphp/bin', '2018-12-02 05:42:31'),
+(538, 0, 'admin/controller/extension/module/vendors/scssphp/composer.json', '2018-12-02 05:42:31'),
+(539, 0, 'admin/controller/extension/module/vendors/scssphp/example', '2018-12-02 05:42:31'),
+(540, 0, 'admin/controller/extension/module/vendors/scssphp/scss.inc.php', '2018-12-02 05:42:31'),
+(541, 0, 'admin/controller/extension/module/vendors/scssphp/src', '2018-12-02 05:42:31'),
+(542, 0, 'admin/view/javascript/pavobuilder/src/collections/columns.js', '2018-12-02 05:42:31'),
+(543, 0, 'admin/view/javascript/pavobuilder/src/collections/elements.js', '2018-12-02 05:42:31'),
+(544, 0, 'admin/view/javascript/pavobuilder/src/collections/group.js', '2018-12-02 05:42:31'),
+(545, 0, 'admin/view/javascript/pavobuilder/src/collections/rows.js', '2018-12-02 05:42:31'),
+(546, 0, 'admin/view/javascript/pavobuilder/src/collections/tabs.js', '2018-12-02 05:42:31'),
+(547, 0, 'admin/view/javascript/pavobuilder/src/common/functions.js', '2018-12-02 05:42:31'),
+(548, 0, 'admin/view/javascript/pavobuilder/src/models/column.js', '2018-12-02 05:42:31'),
+(549, 0, 'admin/view/javascript/pavobuilder/src/models/element.js', '2018-12-02 05:42:31'),
+(550, 0, 'admin/view/javascript/pavobuilder/src/models/row.js', '2018-12-02 05:42:31'),
+(551, 0, 'admin/view/javascript/pavobuilder/src/models/tab.js', '2018-12-02 05:42:31'),
+(552, 0, 'admin/view/javascript/pavobuilder/src/views/column.js', '2018-12-02 05:42:31'),
+(553, 0, 'admin/view/javascript/pavobuilder/src/views/element-tabs.js', '2018-12-02 05:42:31'),
+(554, 0, 'admin/view/javascript/pavobuilder/src/views/element.js', '2018-12-02 05:42:31'),
+(555, 0, 'admin/view/javascript/pavobuilder/src/views/globals', '2018-12-02 05:42:31'),
+(556, 0, 'admin/view/javascript/pavobuilder/src/views/pavobuilder.js', '2018-12-02 05:42:31'),
+(557, 0, 'admin/view/javascript/pavobuilder/src/views/row.js', '2018-12-02 05:42:31'),
+(558, 0, 'admin/view/javascript/pavobuilder/src/views/rows.js', '2018-12-02 05:42:31'),
+(559, 0, 'admin/view/javascript/pavobuilder/src/views/tabs', '2018-12-02 05:42:31'),
+(560, 0, 'admin/view/stylesheet/pavobuilder/sass/elements/_google_map.scss', '2018-12-02 05:42:31'),
+(561, 0, 'admin/view/template/extension/module/pavobuilder/_template.twig', '2018-12-02 05:42:31'),
+(562, 0, 'admin/view/template/extension/module/pavobuilder/buttons.twig', '2018-12-02 05:42:31'),
+(563, 0, 'admin/view/template/extension/module/pavobuilder/form.twig', '2018-12-02 05:42:31'),
+(564, 0, 'admin/view/template/extension/module/pavobuilder/pavobuilder.twig', '2018-12-02 05:42:31'),
+(565, 0, 'admin/view/template/extension/module/pavothemer/customize.twig', '2018-12-02 05:42:31'),
+(566, 0, 'admin/view/template/extension/module/pavothemer/extensions.twig', '2018-12-02 05:42:31'),
+(567, 0, 'admin/view/template/extension/module/pavothemer/fields', '2018-12-02 05:42:31'),
+(568, 0, 'admin/view/template/extension/module/pavothemer/notice.twig', '2018-12-02 05:42:31'),
+(569, 0, 'admin/view/template/extension/module/pavothemer/paids.twig', '2018-12-02 05:42:31'),
+(570, 0, 'admin/view/template/extension/module/pavothemer/samplesdemo.twig', '2018-12-02 05:42:31'),
+(571, 0, 'admin/view/template/extension/module/pavothemer/sampletable.twig', '2018-12-02 05:42:31'),
+(572, 0, 'admin/view/template/extension/module/pavothemer/settings', '2018-12-02 05:42:31'),
+(573, 0, 'admin/view/template/extension/module/pavothemer/themecontrol.twig', '2018-12-02 05:42:31'),
+(574, 0, 'admin/view/template/extension/module/pavothemer/themecreator.twig', '2018-12-02 05:42:31'),
+(575, 0, 'admin/view/template/extension/module/pavothemer/thememanagement.twig', '2018-12-02 05:42:31'),
+(576, 0, 'admin/view/template/extension/module/pavothemer/tool.twig', '2018-12-02 05:42:31'),
+(577, 0, 'catalog/controller/extension/module/pavobuilder/inc/autoload.php', '2018-12-02 05:42:31'),
+(578, 0, 'catalog/controller/extension/module/pavobuilder/inc/css.php', '2018-12-02 05:42:31'),
+(579, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets', '2018-12-02 05:42:31'),
+(580, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets.php', '2018-12-02 05:42:31'),
+(581, 0, 'catalog/view/javascript/pavobuilder/sass/dist/pavobuilder.css', '2018-12-02 05:42:31'),
+(582, 0, 'catalog/view/javascript/pavobuilder/sass/elements/_google_map.scss', '2018-12-02 05:42:31'),
+(583, 0, 'catalog/view/javascript/pavobuilder/sass/elements/_heading.scss', '2018-12-02 05:42:31'),
+(584, 0, 'catalog/view/javascript/pavobuilder/sass/elements/_search.scss', '2018-12-02 05:42:31'),
+(585, 0, 'catalog/view/javascript/pavobuilder/sass/elements/_team.scss', '2018-12-02 05:42:31'),
+(586, 0, 'catalog/view/theme/default/template/common/currency.twig', '2018-12-02 05:42:31'),
+(587, 0, 'catalog/view/theme/default/template/common/footer_blockbuilder.twig', '2018-12-02 05:42:31'),
+(588, 0, 'catalog/view/theme/default/template/common/language.twig', '2018-12-02 05:42:31'),
+(589, 0, 'admin/controller/extension/module/vendors/scssphp/bin/pscss', '2018-12-02 05:42:31'),
+(590, 0, 'admin/controller/extension/module/vendors/scssphp/example/Server.php', '2018-12-02 05:42:31'),
+(591, 0, 'admin/controller/extension/module/vendors/scssphp/src/Base', '2018-12-02 05:42:31'),
+(592, 0, 'admin/controller/extension/module/vendors/scssphp/src/Block.php', '2018-12-02 05:42:31'),
+(593, 0, 'admin/controller/extension/module/vendors/scssphp/src/Colors.php', '2018-12-02 05:42:31'),
+(594, 0, 'admin/controller/extension/module/vendors/scssphp/src/Compiler', '2018-12-02 05:42:31'),
+(595, 0, 'admin/controller/extension/module/vendors/scssphp/src/Compiler.php', '2018-12-02 05:42:31'),
+(596, 0, 'admin/controller/extension/module/vendors/scssphp/src/Exception', '2018-12-02 05:42:31'),
+(597, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter', '2018-12-02 05:42:31'),
+(598, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter.php', '2018-12-02 05:42:31'),
+(599, 0, 'admin/controller/extension/module/vendors/scssphp/src/Node', '2018-12-02 05:42:31'),
+(600, 0, 'admin/controller/extension/module/vendors/scssphp/src/Node.php', '2018-12-02 05:42:31'),
+(601, 0, 'admin/controller/extension/module/vendors/scssphp/src/Parser.php', '2018-12-02 05:42:31'),
+(602, 0, 'admin/controller/extension/module/vendors/scssphp/src/SourceMap', '2018-12-02 05:42:31'),
+(603, 0, 'admin/controller/extension/module/vendors/scssphp/src/Type.php', '2018-12-02 05:42:31'),
+(604, 0, 'admin/controller/extension/module/vendors/scssphp/src/Util.php', '2018-12-02 05:42:31'),
+(605, 0, 'admin/controller/extension/module/vendors/scssphp/src/Version.php', '2018-12-02 05:42:31'),
+(606, 0, 'admin/view/javascript/pavobuilder/src/views/globals/custom-row.js', '2018-12-02 05:42:31'),
+(607, 0, 'admin/view/javascript/pavobuilder/src/views/globals/edit-form.js', '2018-12-02 05:42:31'),
+(608, 0, 'admin/view/javascript/pavobuilder/src/views/globals/elements-popup.js', '2018-12-02 05:42:31'),
+(609, 0, 'admin/view/javascript/pavobuilder/src/views/globals/google-map.js', '2018-12-02 05:42:31'),
+(610, 0, 'admin/view/javascript/pavobuilder/src/views/globals/group.js', '2018-12-02 05:42:31'),
+(611, 0, 'admin/view/javascript/pavobuilder/src/views/globals/helper.js', '2018-12-02 05:42:31'),
+(612, 0, 'admin/view/javascript/pavobuilder/src/views/globals/loader.js', '2018-12-02 05:42:31'),
+(613, 0, 'admin/view/javascript/pavobuilder/src/views/tabs/tab-content.js', '2018-12-02 05:42:31'),
+(614, 0, 'admin/view/javascript/pavobuilder/src/views/tabs/tab-title.js', '2018-12-02 05:42:31'),
+(615, 0, 'admin/view/template/extension/module/pavothemer/fields/checkbox.twig', '2018-12-02 05:42:31'),
+(616, 0, 'admin/view/template/extension/module/pavothemer/fields/code_editor.twig', '2018-12-02 05:42:31'),
+(617, 0, 'admin/view/template/extension/module/pavothemer/fields/colorpicker', '2018-12-02 05:42:31'),
+(618, 0, 'admin/view/template/extension/module/pavothemer/fields/colorpicker.twig', '2018-12-02 05:42:31'),
+(619, 0, 'admin/view/template/extension/module/pavothemer/fields/hr.twig', '2018-12-02 05:42:31'),
+(620, 0, 'admin/view/template/extension/module/pavothemer/fields/input.twig', '2018-12-02 05:42:31'),
+(621, 0, 'admin/view/template/extension/module/pavothemer/fields/link.twig', '2018-12-02 05:42:31'),
+(622, 0, 'admin/view/template/extension/module/pavothemer/fields/notice.twig', '2018-12-02 05:42:31'),
+(623, 0, 'admin/view/template/extension/module/pavothemer/fields/radio.twig', '2018-12-02 05:42:31'),
+(624, 0, 'admin/view/template/extension/module/pavothemer/fields/rangeslider.twig', '2018-12-02 05:42:31'),
+(625, 0, 'admin/view/template/extension/module/pavothemer/fields/select.twig', '2018-12-02 05:42:31'),
+(626, 0, 'admin/view/template/extension/module/pavothemer/fields/select_background_image.twig', '2018-12-02 05:42:31'),
+(627, 0, 'admin/view/template/extension/module/pavothemer/fields/select_color.twig', '2018-12-02 05:42:31'),
+(628, 0, 'admin/view/template/extension/module/pavothemer/fields/select_font.twig', '2018-12-02 05:42:31'),
+(629, 0, 'admin/view/template/extension/module/pavothemer/fields/select_font_size.twig', '2018-12-02 05:42:31'),
+(630, 0, 'admin/view/template/extension/module/pavothemer/fields/select_font_weight.twig', '2018-12-02 05:42:31'),
+(631, 0, 'admin/view/template/extension/module/pavothemer/fields/target_select.twig', '2018-12-02 05:42:31'),
+(632, 0, 'admin/view/template/extension/module/pavothemer/fields/textarea.twig', '2018-12-02 05:42:31'),
+(633, 0, 'admin/view/template/extension/module/pavothemer/settings/1-general.xml', '2018-12-02 05:42:31'),
+(634, 0, 'admin/view/template/extension/module/pavothemer/settings/2-advanced.xml', '2018-12-02 05:42:31'),
+(635, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/accordion.php', '2018-12-02 05:42:31'),
+(636, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/addtocart_button.php', '2018-12-02 05:42:31'),
+(637, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/advsearch.php', '2018-12-02 05:42:31'),
+(638, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/animated_bar.php', '2018-12-02 05:42:31'),
+(639, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/banner_carousel.php', '2018-12-02 05:42:31'),
+(640, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/block_links.php', '2018-12-02 05:42:31'),
+(641, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/button.php', '2018-12-02 05:42:31'),
+(642, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/call_to_action.php', '2018-12-02 05:42:31'),
+(643, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/categories_menu.php', '2018-12-02 05:42:31'),
+(644, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/categories_tabs.php', '2018-12-02 05:42:31'),
+(645, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/column.php', '2018-12-02 05:42:31'),
+(646, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/contact.php', '2018-12-02 05:42:31'),
+(647, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/countdown.php', '2018-12-02 05:42:31'),
+(648, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/counter.php', '2018-12-02 05:42:31'),
+(649, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/currencies.php', '2018-12-02 05:42:31'),
+(650, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/custom_blog.php', '2018-12-02 05:42:31'),
+(651, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/custom_menu.php', '2018-12-02 05:42:31'),
+(652, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/custom_testimonial.php', '2018-12-02 05:42:31'),
+(653, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/deals.php', '2018-12-02 05:42:31'),
+(654, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/facebook_page.php', '2018-12-02 05:42:31'),
+(655, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/featured_categories.php', '2018-12-02 05:42:31'),
+(656, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/featuredbox.php', '2018-12-02 05:42:31'),
+(657, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/flash_new.php', '2018-12-02 05:42:31'),
+(658, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/gallery.php', '2018-12-02 05:42:31'),
+(659, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/google_map.php', '2018-12-02 05:42:31'),
+(660, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/heading.php', '2018-12-02 05:42:31'),
+(661, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/icon_text.php', '2018-12-02 05:42:31'),
+(662, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/image_360.php', '2018-12-02 05:42:31'),
+(663, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/image_text.php', '2018-12-02 05:42:31'),
+(664, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/image_text_carousel.php', '2018-12-02 05:42:31'),
+(665, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/instagram.php', '2018-12-02 05:42:31'),
+(666, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/interactive_banner.php', '2018-12-02 05:42:31'),
+(667, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/languages.php', '2018-12-02 05:42:31'),
+(668, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/logo.php', '2018-12-02 05:42:31'),
+(669, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/minicart.php', '2018-12-02 05:42:31'),
+(670, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/price_table.php', '2018-12-02 05:42:31'),
+(671, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/product_banner_category.php', '2018-12-02 05:42:31'),
+(672, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/product_carousel.php', '2018-12-02 05:42:31'),
+(673, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/product_category.php', '2018-12-02 05:42:31'),
+(674, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/product_list.php', '2018-12-02 05:42:31'),
+(675, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/quicklogin.php', '2018-12-02 05:42:31'),
+(676, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/row.php', '2018-12-02 05:42:31'),
+(677, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/search.php', '2018-12-02 05:42:31'),
+(678, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/single_image.php', '2018-12-02 05:42:31'),
+(679, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/social_network.php', '2018-12-02 05:42:31'),
+(680, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/spacing.php', '2018-12-02 05:42:31'),
+(681, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/tab_group.php', '2018-12-02 05:42:31'),
+(682, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/tabs.php', '2018-12-02 05:42:31'),
+(683, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/tabs_productcarousel.php', '2018-12-02 05:42:31'),
+(684, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/team.php', '2018-12-02 05:42:31'),
+(685, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/text.php', '2018-12-02 05:42:31'),
+(686, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/text_box.php', '2018-12-02 05:42:31'),
+(687, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/toplinks.php', '2018-12-02 05:42:31'),
+(688, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/toplist.php', '2018-12-02 05:42:31'),
+(689, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/twitter.php', '2018-12-02 05:42:31'),
+(690, 0, 'catalog/controller/extension/module/pavobuilder/inc/widgets/video.php', '2018-12-02 05:42:31'),
+(691, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder', '2018-12-02 05:42:31'),
+(692, 0, 'catalog/view/theme/default/template/extension/module/pavoheader', '2018-12-02 05:42:31'),
+(693, 0, 'admin/controller/extension/module/vendors/scssphp/src/Base/Range.php', '2018-12-02 05:42:31'),
+(694, 0, 'admin/controller/extension/module/vendors/scssphp/src/Compiler/Environment.php', '2018-12-02 05:42:31'),
+(695, 0, 'admin/controller/extension/module/vendors/scssphp/src/Exception/CompilerException.php', '2018-12-02 05:42:31'),
+(696, 0, 'admin/controller/extension/module/vendors/scssphp/src/Exception/ParserException.php', '2018-12-02 05:42:31'),
+(697, 0, 'admin/controller/extension/module/vendors/scssphp/src/Exception/RangeException.php', '2018-12-02 05:42:31'),
+(698, 0, 'admin/controller/extension/module/vendors/scssphp/src/Exception/ServerException.php', '2018-12-02 05:42:31'),
+(699, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Compact.php', '2018-12-02 05:42:31'),
+(700, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Compressed.php', '2018-12-02 05:42:31'),
+(701, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Crunched.php', '2018-12-02 05:42:31'),
+(702, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Debug.php', '2018-12-02 05:42:31'),
+(703, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Expanded.php', '2018-12-02 05:42:31'),
+(704, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/Nested.php', '2018-12-02 05:42:31'),
+(705, 0, 'admin/controller/extension/module/vendors/scssphp/src/Formatter/OutputBlock.php', '2018-12-02 05:42:31'),
+(706, 0, 'admin/controller/extension/module/vendors/scssphp/src/Node/Number.php', '2018-12-02 05:42:31'),
+(707, 0, 'admin/controller/extension/module/vendors/scssphp/src/SourceMap/Base64VLQEncoder.php', '2018-12-02 05:42:31'),
+(708, 0, 'admin/controller/extension/module/vendors/scssphp/src/SourceMap/SourceMapGenerator.php', '2018-12-02 05:42:31'),
+(709, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/loop', '2018-12-02 05:42:31'),
+(710, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_accordion', '2018-12-02 05:42:31'),
+(711, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_addtocart_button', '2018-12-02 05:42:31'),
+(712, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_animated_bar', '2018-12-02 05:42:31'),
+(713, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_banner_carousel', '2018-12-02 05:42:31'),
+(714, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_block_links', '2018-12-02 05:42:31'),
+(715, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_button', '2018-12-02 05:42:31'),
+(716, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_call_to_action', '2018-12-02 05:42:31'),
+(717, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_categories_tabs', '2018-12-02 05:42:31'),
+(718, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_column', '2018-12-02 05:42:31'),
+(719, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_contact', '2018-12-02 05:42:31'),
+(720, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_countdown', '2018-12-02 05:42:31'),
+(721, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_counter', '2018-12-02 05:42:31'),
+(722, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_blog', '2018-12-02 05:42:31'),
+(723, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_menu', '2018-12-02 05:42:31'),
+(724, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_testimonial', '2018-12-02 05:42:31'),
+(725, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_deals', '2018-12-02 05:42:31'),
+(726, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_element_wrapper.twig', '2018-12-02 05:42:31'),
+(727, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_facebook_page', '2018-12-02 05:42:31'),
+(728, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featured_categories', '2018-12-02 05:42:31'),
+(729, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featuredbox', '2018-12-02 05:42:31'),
+(730, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_gallery', '2018-12-02 05:42:31'),
+(731, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_google_map', '2018-12-02 05:42:31'),
+(732, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_heading', '2018-12-02 05:42:31'),
+(733, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_icon_text', '2018-12-02 05:42:31'),
+(734, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_360', '2018-12-02 05:42:31'),
+(735, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text', '2018-12-02 05:42:31'),
+(736, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text_carousel', '2018-12-02 05:42:31'),
+(737, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_instagram', '2018-12-02 05:42:31'),
+(738, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_interactive_banner', '2018-12-02 05:42:31'),
+(739, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_price_table', '2018-12-02 05:42:31'),
+(740, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_carousel', '2018-12-02 05:42:31'),
+(741, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_category', '2018-12-02 05:42:31'),
+(742, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_list', '2018-12-02 05:42:31'),
+(743, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_row', '2018-12-02 05:42:31'),
+(744, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_single_image', '2018-12-02 05:42:31'),
+(745, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_social_network', '2018-12-02 05:42:31'),
+(746, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_spacing', '2018-12-02 05:42:31'),
+(747, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tab_group', '2018-12-02 05:42:31'),
+(748, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tabs', '2018-12-02 05:42:31'),
+(749, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tabs_productcarousel', '2018-12-02 05:42:31'),
+(750, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_team', '2018-12-02 05:42:31'),
+(751, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_text', '2018-12-02 05:42:31'),
+(752, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_text_box', '2018-12-02 05:42:31'),
+(753, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_twitter', '2018-12-02 05:42:31'),
+(754, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_video', '2018-12-02 05:42:31'),
+(755, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/advsearch.twig', '2018-12-02 05:42:31'),
+(756, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/categories_menu.twig', '2018-12-02 05:42:31'),
+(757, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/flash_new.twig', '2018-12-02 05:42:31'),
+(758, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/logo.twig', '2018-12-02 05:42:31'),
+(759, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/quicklogin.twig', '2018-12-02 05:42:31'),
+(760, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/search.twig', '2018-12-02 05:42:31'),
+(761, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/toplinks.twig', '2018-12-02 05:42:31'),
+(762, 0, 'catalog/view/theme/default/template/extension/module/pavoheader/toplist.twig', '2018-12-02 05:42:31'),
+(763, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/loop/product.twig', '2018-12-02 05:42:31'),
+(764, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/loop/products-list.twig', '2018-12-02 05:42:31'),
+(765, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_accordion/pa_accordion.twig', '2018-12-02 05:42:31'),
+(766, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_addtocart_button/pa_addtocart_button.twig', '2018-12-02 05:42:31'),
+(767, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_animated_bar/pa_animated_bar.twig', '2018-12-02 05:42:31'),
+(768, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_banner_carousel/pa_banner_carousel.twig', '2018-12-02 05:42:31'),
+(769, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_block_links/pa_block_links.twig', '2018-12-02 05:42:31'),
+(770, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_button/pa_button.twig', '2018-12-02 05:42:31'),
+(771, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_call_to_action/pa_call_to_action.twig', '2018-12-02 05:42:31'),
+(772, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_categories_tabs/pa_categories_tabs.twig', '2018-12-02 05:42:31'),
+(773, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_column/pa_column.twig', '2018-12-02 05:42:31'),
+(774, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_contact/pa_contact.twig', '2018-12-02 05:42:31'),
+(775, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_countdown/pa_countdown.twig', '2018-12-02 05:42:31'),
+(776, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_counter/pa_counter.twig', '2018-12-02 05:42:31'),
+(777, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_blog/pa_custom_blog.twig', '2018-12-02 05:42:31'),
+(778, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_blog/pa_custom_blog2.twig', '2018-12-02 05:42:31'),
+(779, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_menu/pa_custom_menu.twig', '2018-12-02 05:42:31'),
+(780, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_testimonial/layout1.twig', '2018-12-02 05:42:31'),
+(781, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_custom_testimonial/pa_custom_testimonial.twig', '2018-12-02 05:42:31'),
+(782, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_deals/_layout1.twig', '2018-12-02 05:42:31'),
+(783, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_deals/_layout2.twig', '2018-12-02 05:42:31'),
+(784, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_deals/pa_deals.twig', '2018-12-02 05:42:31'),
+(785, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_facebook_page/pa_facebook_page.twig', '2018-12-02 05:42:31'),
+(786, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featured_categories/pa_featured_categories.twig', '2018-12-02 05:42:31'),
+(787, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featuredbox/layout1.twig', '2018-12-02 05:42:31'),
+(788, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featuredbox/layout2.twig', '2018-12-02 05:42:31'),
+(789, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_featuredbox/layout3.twig', '2018-12-02 05:42:31'),
+(790, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_gallery/pa_gallery.twig', '2018-12-02 05:42:31'),
+(791, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_google_map/pa_google_map.twig', '2018-12-02 05:42:31'),
+(792, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_heading/pa_heading.twig', '2018-12-02 05:42:31'),
+(793, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_icon_text/layout1.twig', '2018-12-02 05:42:31'),
+(794, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_icon_text/layout2.twig', '2018-12-02 05:42:31'),
+(795, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_icon_text/layout3.twig', '2018-12-02 05:42:31'),
+(796, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_icon_text/layout4.twig', '2018-12-02 05:42:31'),
+(797, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_360/pa_image_360.twig', '2018-12-02 05:42:31'),
+(798, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text/layout1.twig', '2018-12-02 05:42:31'),
+(799, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text/layout2.twig', '2018-12-02 05:42:31'),
+(800, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text/layout3.twig', '2018-12-02 05:42:31'),
+(801, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_image_text_carousel/pa_image_text_carousel.twig', '2018-12-02 05:42:31'),
+(802, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_instagram/pa_instagram.twig', '2018-12-02 05:42:31'),
+(803, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_interactive_banner/pa_interactive_banner.twig', '2018-12-02 05:42:31'),
+(804, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_price_table/layout1.twig', '2018-12-02 05:42:31'),
+(805, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_carousel/product_carousel.twig', '2018-12-02 05:42:31'),
+(806, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_category/pa_product_category.twig', '2018-12-02 05:42:31'),
+(807, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_product_list/product_list.twig', '2018-12-02 05:42:31'),
+(808, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_row/pa_row.twig', '2018-12-02 05:42:31'),
+(809, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_single_image/pa_single_image.twig', '2018-12-02 05:42:31'),
+(810, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_social_network/pa_social_network.twig', '2018-12-02 05:42:31'),
+(811, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_spacing/pa_spacing.twig', '2018-12-02 05:42:31'),
+(812, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tab_group/pa_tab_group.twig', '2018-12-02 05:42:31'),
+(813, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tabs/pa_tabs.twig', '2018-12-02 05:42:31'),
+(814, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_tabs_productcarousel/pa_tabs_productcarousel.twig', '2018-12-02 05:42:31'),
+(815, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_team/layout1.twig', '2018-12-02 05:42:31'),
+(816, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_team/layout2.twig', '2018-12-02 05:42:31'),
+(817, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_team/layout3.twig', '2018-12-02 05:42:31'),
+(818, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_text/pa_text.twig', '2018-12-02 05:42:31'),
+(819, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_text_box/pa_text_box.twig', '2018-12-02 05:42:31'),
+(820, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_twitter/default.twig', '2018-12-02 05:42:31'),
+(821, 0, 'catalog/view/theme/default/template/extension/module/pavobuilder/pa_video/pa_video.twig', '2018-12-02 05:42:31'),
+(822, 2, 'admin/language/zh-hk', '2018-12-02 06:00:35'),
+(823, 2, 'catalog/language/zh-hk', '2018-12-02 06:00:35'),
+(824, 2, 'admin/language/zh-hk/catalog', '2018-12-02 06:00:35'),
+(825, 2, 'admin/language/zh-hk/common', '2018-12-02 06:00:35'),
+(826, 2, 'admin/language/zh-hk/customer', '2018-12-02 06:00:35'),
+(827, 2, 'admin/language/zh-hk/design', '2018-12-02 06:00:35'),
+(828, 2, 'admin/language/zh-hk/error', '2018-12-02 06:00:35'),
+(829, 2, 'admin/language/zh-hk/extension', '2018-12-02 06:00:35'),
+(830, 2, 'admin/language/zh-hk/localisation', '2018-12-02 06:00:35'),
+(831, 2, 'admin/language/zh-hk/mail', '2018-12-02 06:00:35'),
+(832, 2, 'admin/language/zh-hk/marketing', '2018-12-02 06:00:35'),
+(833, 2, 'admin/language/zh-hk/marketplace', '2018-12-02 06:00:35'),
+(834, 2, 'admin/language/zh-hk/report', '2018-12-02 06:00:35'),
+(835, 2, 'admin/language/zh-hk/sale', '2018-12-02 06:00:35'),
+(836, 2, 'admin/language/zh-hk/setting', '2018-12-02 06:00:35'),
+(837, 2, 'admin/language/zh-hk/tool', '2018-12-02 06:00:35'),
+(838, 2, 'admin/language/zh-hk/user', '2018-12-02 06:00:35'),
+(839, 2, 'admin/language/zh-hk/zh-hk.php', '2018-12-02 06:00:35'),
+(840, 2, 'admin/language/zh-hk/zh-hk.png', '2018-12-02 06:00:35'),
+(841, 2, 'catalog/language/zh-hk/account', '2018-12-02 06:00:35'),
+(842, 2, 'catalog/language/zh-hk/affiliate', '2018-12-02 06:00:35'),
+(843, 2, 'catalog/language/zh-hk/api', '2018-12-02 06:00:35'),
+(844, 2, 'catalog/language/zh-hk/checkout', '2018-12-02 06:00:35'),
+(845, 2, 'catalog/language/zh-hk/common', '2018-12-02 06:00:35'),
+(846, 2, 'catalog/language/zh-hk/error', '2018-12-02 06:00:35'),
+(847, 2, 'catalog/language/zh-hk/extension', '2018-12-02 06:00:35'),
+(848, 2, 'catalog/language/zh-hk/information', '2018-12-02 06:00:35'),
+(849, 2, 'catalog/language/zh-hk/mail', '2018-12-02 06:00:35'),
+(850, 2, 'catalog/language/zh-hk/product', '2018-12-02 06:00:35'),
+(851, 2, 'catalog/language/zh-hk/tool', '2018-12-02 06:00:35'),
+(852, 2, 'catalog/language/zh-hk/zh-hk.php', '2018-12-02 06:00:35'),
+(853, 2, 'catalog/language/zh-hk/zh-hk.png', '2018-12-02 06:00:35'),
+(854, 2, 'admin/language/zh-hk/catalog/attribute.php', '2018-12-02 06:00:35'),
+(855, 2, 'admin/language/zh-hk/catalog/attribute_group.php', '2018-12-02 06:00:35'),
+(856, 2, 'admin/language/zh-hk/catalog/category.php', '2018-12-02 06:00:35'),
+(857, 2, 'admin/language/zh-hk/catalog/download.php', '2018-12-02 06:00:35'),
+(858, 2, 'admin/language/zh-hk/catalog/filter.php', '2018-12-02 06:00:35'),
+(859, 2, 'admin/language/zh-hk/catalog/information.php', '2018-12-02 06:00:35'),
+(860, 2, 'admin/language/zh-hk/catalog/manufacturer.php', '2018-12-02 06:00:35'),
+(861, 2, 'admin/language/zh-hk/catalog/option.php', '2018-12-02 06:00:35'),
+(862, 2, 'admin/language/zh-hk/catalog/product.php', '2018-12-02 06:00:35'),
+(863, 2, 'admin/language/zh-hk/catalog/recurring.php', '2018-12-02 06:00:35'),
+(864, 2, 'admin/language/zh-hk/catalog/review.php', '2018-12-02 06:00:35'),
+(865, 2, 'admin/language/zh-hk/common/column_left.php', '2018-12-02 06:00:35'),
+(866, 2, 'admin/language/zh-hk/common/dashboard.php', '2018-12-02 06:00:35'),
+(867, 2, 'admin/language/zh-hk/common/developer.php', '2018-12-02 06:00:35'),
+(868, 2, 'admin/language/zh-hk/common/filemanager.php', '2018-12-02 06:00:35'),
+(869, 2, 'admin/language/zh-hk/common/footer.php', '2018-12-02 06:00:35'),
+(870, 2, 'admin/language/zh-hk/common/forgotten.php', '2018-12-02 06:00:35'),
+(871, 2, 'admin/language/zh-hk/common/header.php', '2018-12-02 06:00:35'),
+(872, 2, 'admin/language/zh-hk/common/login.php', '2018-12-02 06:00:35'),
+(873, 2, 'admin/language/zh-hk/common/profile.php', '2018-12-02 06:00:35'),
+(874, 2, 'admin/language/zh-hk/common/reset.php', '2018-12-02 06:00:35'),
+(875, 2, 'admin/language/zh-hk/common/security.php', '2018-12-02 06:00:35'),
+(876, 2, 'admin/language/zh-hk/customer/custom_field.php', '2018-12-02 06:00:35'),
+(877, 2, 'admin/language/zh-hk/customer/customer.php', '2018-12-02 06:00:35'),
+(878, 2, 'admin/language/zh-hk/customer/customer_approval.php', '2018-12-02 06:00:35'),
+(879, 2, 'admin/language/zh-hk/customer/customer_group.php', '2018-12-02 06:00:35'),
+(880, 2, 'admin/language/zh-hk/design/banner.php', '2018-12-02 06:00:35'),
+(881, 2, 'admin/language/zh-hk/design/layout.php', '2018-12-02 06:00:35'),
+(882, 2, 'admin/language/zh-hk/design/seo_url.php', '2018-12-02 06:00:35'),
+(883, 2, 'admin/language/zh-hk/design/theme.php', '2018-12-02 06:00:35'),
+(884, 2, 'admin/language/zh-hk/design/translation.php', '2018-12-02 06:00:35'),
+(885, 2, 'admin/language/zh-hk/error/not_found.php', '2018-12-02 06:00:35'),
+(886, 2, 'admin/language/zh-hk/error/permission.php', '2018-12-02 06:00:35'),
+(887, 2, 'admin/language/zh-hk/extension/analytics', '2018-12-02 06:00:35'),
+(888, 2, 'admin/language/zh-hk/extension/captcha', '2018-12-02 06:00:35'),
+(889, 2, 'admin/language/zh-hk/extension/dashboard', '2018-12-02 06:00:35'),
+(890, 2, 'admin/language/zh-hk/extension/extension', '2018-12-02 06:00:35'),
+(891, 2, 'admin/language/zh-hk/extension/feed', '2018-12-02 06:00:35'),
+(892, 2, 'admin/language/zh-hk/extension/fraud', '2018-12-02 06:00:35'),
+(893, 2, 'admin/language/zh-hk/extension/menu', '2018-12-02 06:00:35'),
+(894, 2, 'admin/language/zh-hk/extension/module', '2018-12-02 06:00:35'),
+(895, 2, 'admin/language/zh-hk/extension/openbay', '2018-12-02 06:00:35'),
+(896, 2, 'admin/language/zh-hk/extension/payment', '2018-12-02 06:00:35'),
+(897, 2, 'admin/language/zh-hk/extension/report', '2018-12-02 06:00:35'),
+(898, 2, 'admin/language/zh-hk/extension/shipping', '2018-12-02 06:00:35'),
+(899, 2, 'admin/language/zh-hk/extension/theme', '2018-12-02 06:00:35'),
+(900, 2, 'admin/language/zh-hk/extension/total', '2018-12-02 06:00:35'),
+(901, 2, 'admin/language/zh-hk/localisation/country.php', '2018-12-02 06:00:35'),
+(902, 2, 'admin/language/zh-hk/localisation/currency.php', '2018-12-02 06:00:35'),
+(903, 2, 'admin/language/zh-hk/localisation/geo_zone.php', '2018-12-02 06:00:35'),
+(904, 2, 'admin/language/zh-hk/localisation/language.php', '2018-12-02 06:00:35'),
+(905, 2, 'admin/language/zh-hk/localisation/length_class.php', '2018-12-02 06:00:35'),
+(906, 2, 'admin/language/zh-hk/localisation/location.php', '2018-12-02 06:00:35'),
+(907, 2, 'admin/language/zh-hk/localisation/order_status.php', '2018-12-02 06:00:35'),
+(908, 2, 'admin/language/zh-hk/localisation/return_action.php', '2018-12-02 06:00:35');
+INSERT INTO `op_extension_path` (`extension_path_id`, `extension_install_id`, `path`, `date_added`) VALUES
+(909, 2, 'admin/language/zh-hk/localisation/return_reason.php', '2018-12-02 06:00:35'),
+(910, 2, 'admin/language/zh-hk/localisation/return_status.php', '2018-12-02 06:00:35'),
+(911, 2, 'admin/language/zh-hk/localisation/stock_status.php', '2018-12-02 06:00:35'),
+(912, 2, 'admin/language/zh-hk/localisation/tax_class.php', '2018-12-02 06:00:35'),
+(913, 2, 'admin/language/zh-hk/localisation/tax_rate.php', '2018-12-02 06:00:35'),
+(914, 2, 'admin/language/zh-hk/localisation/weight_class.php', '2018-12-02 06:00:35'),
+(915, 2, 'admin/language/zh-hk/localisation/zone.php', '2018-12-02 06:00:35'),
+(916, 2, 'admin/language/zh-hk/mail/affiliate_approve.php', '2018-12-02 06:00:35'),
+(917, 2, 'admin/language/zh-hk/mail/affiliate_deny.php', '2018-12-02 06:00:35'),
+(918, 2, 'admin/language/zh-hk/mail/customer_approve.php', '2018-12-02 06:00:35'),
+(919, 2, 'admin/language/zh-hk/mail/customer_deny.php', '2018-12-02 06:00:35'),
+(920, 2, 'admin/language/zh-hk/mail/forgotten.php', '2018-12-02 06:00:35'),
+(921, 2, 'admin/language/zh-hk/mail/return.php', '2018-12-02 06:00:35'),
+(922, 2, 'admin/language/zh-hk/mail/reward.php', '2018-12-02 06:00:35'),
+(923, 2, 'admin/language/zh-hk/mail/transaction.php', '2018-12-02 06:00:35'),
+(924, 2, 'admin/language/zh-hk/mail/voucher.php', '2018-12-02 06:00:35'),
+(925, 2, 'admin/language/zh-hk/marketing/contact.php', '2018-12-02 06:00:35'),
+(926, 2, 'admin/language/zh-hk/marketing/coupon.php', '2018-12-02 06:00:35'),
+(927, 2, 'admin/language/zh-hk/marketing/marketing.php', '2018-12-02 06:00:35'),
+(928, 2, 'admin/language/zh-hk/marketplace/api.php', '2018-12-02 06:00:35'),
+(929, 2, 'admin/language/zh-hk/marketplace/event.php', '2018-12-02 06:00:35'),
+(930, 2, 'admin/language/zh-hk/marketplace/extension.php', '2018-12-02 06:00:35'),
+(931, 2, 'admin/language/zh-hk/marketplace/install.php', '2018-12-02 06:00:35'),
+(932, 2, 'admin/language/zh-hk/marketplace/installer.php', '2018-12-02 06:00:35'),
+(933, 2, 'admin/language/zh-hk/marketplace/marketplace.php', '2018-12-02 06:00:35'),
+(934, 2, 'admin/language/zh-hk/marketplace/modification.php', '2018-12-02 06:00:35'),
+(935, 2, 'admin/language/zh-hk/marketplace/openbay.php', '2018-12-02 06:00:35'),
+(936, 2, 'admin/language/zh-hk/report/online.php', '2018-12-02 06:00:35'),
+(937, 2, 'admin/language/zh-hk/report/report.php', '2018-12-02 06:00:35'),
+(938, 2, 'admin/language/zh-hk/report/statistics.php', '2018-12-02 06:00:35'),
+(939, 2, 'admin/language/zh-hk/sale/order.php', '2018-12-02 06:00:35'),
+(940, 2, 'admin/language/zh-hk/sale/recurring.php', '2018-12-02 06:00:35'),
+(941, 2, 'admin/language/zh-hk/sale/return.php', '2018-12-02 06:00:35'),
+(942, 2, 'admin/language/zh-hk/sale/voucher.php', '2018-12-02 06:00:35'),
+(943, 2, 'admin/language/zh-hk/sale/voucher_theme.php', '2018-12-02 06:00:35'),
+(944, 2, 'admin/language/zh-hk/setting/setting.php', '2018-12-02 06:00:35'),
+(945, 2, 'admin/language/zh-hk/setting/store.php', '2018-12-02 06:00:35'),
+(946, 2, 'admin/language/zh-hk/tool/backup.php', '2018-12-02 06:00:35'),
+(947, 2, 'admin/language/zh-hk/tool/log.php', '2018-12-02 06:00:35'),
+(948, 2, 'admin/language/zh-hk/tool/upload.php', '2018-12-02 06:00:35'),
+(949, 2, 'admin/language/zh-hk/user/api.php', '2018-12-02 06:00:35'),
+(950, 2, 'admin/language/zh-hk/user/user.php', '2018-12-02 06:00:35'),
+(951, 2, 'admin/language/zh-hk/user/user_group.php', '2018-12-02 06:00:35'),
+(952, 2, 'catalog/language/zh-hk/account/account.php', '2018-12-02 06:00:35'),
+(953, 2, 'catalog/language/zh-hk/account/address.php', '2018-12-02 06:00:35'),
+(954, 2, 'catalog/language/zh-hk/account/affiliate.php', '2018-12-02 06:00:35'),
+(955, 2, 'catalog/language/zh-hk/account/download.php', '2018-12-02 06:00:35'),
+(956, 2, 'catalog/language/zh-hk/account/edit.php', '2018-12-02 06:00:35'),
+(957, 2, 'catalog/language/zh-hk/account/forgotten.php', '2018-12-02 06:00:35'),
+(958, 2, 'catalog/language/zh-hk/account/login.php', '2018-12-02 06:00:35'),
+(959, 2, 'catalog/language/zh-hk/account/logout.php', '2018-12-02 06:00:35'),
+(960, 2, 'catalog/language/zh-hk/account/newsletter.php', '2018-12-02 06:00:35'),
+(961, 2, 'catalog/language/zh-hk/account/order.php', '2018-12-02 06:00:35'),
+(962, 2, 'catalog/language/zh-hk/account/password.php', '2018-12-02 06:00:35'),
+(963, 2, 'catalog/language/zh-hk/account/recurring.php', '2018-12-02 06:00:35'),
+(964, 2, 'catalog/language/zh-hk/account/register.php', '2018-12-02 06:00:35'),
+(965, 2, 'catalog/language/zh-hk/account/reset.php', '2018-12-02 06:00:35'),
+(966, 2, 'catalog/language/zh-hk/account/return.php', '2018-12-02 06:00:35'),
+(967, 2, 'catalog/language/zh-hk/account/reward.php', '2018-12-02 06:00:35'),
+(968, 2, 'catalog/language/zh-hk/account/success.php', '2018-12-02 06:00:35'),
+(969, 2, 'catalog/language/zh-hk/account/tracking.php', '2018-12-02 06:00:35'),
+(970, 2, 'catalog/language/zh-hk/account/transaction.php', '2018-12-02 06:00:35'),
+(971, 2, 'catalog/language/zh-hk/account/voucher.php', '2018-12-02 06:00:35'),
+(972, 2, 'catalog/language/zh-hk/account/wishlist.php', '2018-12-02 06:00:35'),
+(973, 2, 'catalog/language/zh-hk/affiliate/login.php', '2018-12-02 06:00:35'),
+(974, 2, 'catalog/language/zh-hk/affiliate/register.php', '2018-12-02 06:00:35'),
+(975, 2, 'catalog/language/zh-hk/affiliate/success.php', '2018-12-02 06:00:35'),
+(976, 2, 'catalog/language/zh-hk/api/cart.php', '2018-12-02 06:00:35'),
+(977, 2, 'catalog/language/zh-hk/api/coupon.php', '2018-12-02 06:00:35'),
+(978, 2, 'catalog/language/zh-hk/api/currency.php', '2018-12-02 06:00:35'),
+(979, 2, 'catalog/language/zh-hk/api/customer.php', '2018-12-02 06:00:35'),
+(980, 2, 'catalog/language/zh-hk/api/login.php', '2018-12-02 06:00:35'),
+(981, 2, 'catalog/language/zh-hk/api/order.php', '2018-12-02 06:00:35'),
+(982, 2, 'catalog/language/zh-hk/api/payment.php', '2018-12-02 06:00:35'),
+(983, 2, 'catalog/language/zh-hk/api/reward.php', '2018-12-02 06:00:35'),
+(984, 2, 'catalog/language/zh-hk/api/shipping.php', '2018-12-02 06:00:35'),
+(985, 2, 'catalog/language/zh-hk/api/voucher.php', '2018-12-02 06:00:35'),
+(986, 2, 'catalog/language/zh-hk/checkout/cart.php', '2018-12-02 06:00:35'),
+(987, 2, 'catalog/language/zh-hk/checkout/checkout.php', '2018-12-02 06:00:35'),
+(988, 2, 'catalog/language/zh-hk/checkout/failure.php', '2018-12-02 06:00:35'),
+(989, 2, 'catalog/language/zh-hk/checkout/success.php', '2018-12-02 06:00:35'),
+(990, 2, 'catalog/language/zh-hk/common/cart.php', '2018-12-02 06:00:35'),
+(991, 2, 'catalog/language/zh-hk/common/currency.php', '2018-12-02 06:00:35'),
+(992, 2, 'catalog/language/zh-hk/common/footer.php', '2018-12-02 06:00:35'),
+(993, 2, 'catalog/language/zh-hk/common/header.php', '2018-12-02 06:00:35'),
+(994, 2, 'catalog/language/zh-hk/common/language.php', '2018-12-02 06:00:35'),
+(995, 2, 'catalog/language/zh-hk/common/maintenance.php', '2018-12-02 06:00:35'),
+(996, 2, 'catalog/language/zh-hk/common/menu.php', '2018-12-02 06:00:35'),
+(997, 2, 'catalog/language/zh-hk/common/search.php', '2018-12-02 06:00:35'),
+(998, 2, 'catalog/language/zh-hk/error/not_found.php', '2018-12-02 06:00:35'),
+(999, 2, 'catalog/language/zh-hk/extension/captcha', '2018-12-02 06:00:35'),
+(1000, 2, 'catalog/language/zh-hk/extension/credit_card', '2018-12-02 06:00:35'),
+(1001, 2, 'catalog/language/zh-hk/extension/module', '2018-12-02 06:00:35'),
+(1002, 2, 'catalog/language/zh-hk/extension/openbay', '2018-12-02 06:00:35'),
+(1003, 2, 'catalog/language/zh-hk/extension/payment', '2018-12-02 06:00:35'),
+(1004, 2, 'catalog/language/zh-hk/extension/recurring', '2018-12-02 06:00:35'),
+(1005, 2, 'catalog/language/zh-hk/extension/shipping', '2018-12-02 06:00:35'),
+(1006, 2, 'catalog/language/zh-hk/extension/total', '2018-12-02 06:00:35'),
+(1007, 2, 'catalog/language/zh-hk/information/contact.php', '2018-12-02 06:00:35'),
+(1008, 2, 'catalog/language/zh-hk/information/information.php', '2018-12-02 06:00:35'),
+(1009, 2, 'catalog/language/zh-hk/information/sitemap.php', '2018-12-02 06:00:35'),
+(1010, 2, 'catalog/language/zh-hk/information/tracking.php', '2018-12-02 06:00:35'),
+(1011, 2, 'catalog/language/zh-hk/mail/affiliate.php', '2018-12-02 06:00:35'),
+(1012, 2, 'catalog/language/zh-hk/mail/forgotten.php', '2018-12-02 06:00:35'),
+(1013, 2, 'catalog/language/zh-hk/mail/order_add.php', '2018-12-02 06:00:35'),
+(1014, 2, 'catalog/language/zh-hk/mail/order_alert.php', '2018-12-02 06:00:35'),
+(1015, 2, 'catalog/language/zh-hk/mail/order_edit.php', '2018-12-02 06:00:35'),
+(1016, 2, 'catalog/language/zh-hk/mail/register.php', '2018-12-02 06:00:35'),
+(1017, 2, 'catalog/language/zh-hk/mail/review.php', '2018-12-02 06:00:35'),
+(1018, 2, 'catalog/language/zh-hk/mail/transaction.php', '2018-12-02 06:00:35'),
+(1019, 2, 'catalog/language/zh-hk/mail/voucher.php', '2018-12-02 06:00:35'),
+(1020, 2, 'catalog/language/zh-hk/product/category.php', '2018-12-02 06:00:35'),
+(1021, 2, 'catalog/language/zh-hk/product/compare.php', '2018-12-02 06:00:35'),
+(1022, 2, 'catalog/language/zh-hk/product/manufacturer.php', '2018-12-02 06:00:35'),
+(1023, 2, 'catalog/language/zh-hk/product/product.php', '2018-12-02 06:00:35'),
+(1024, 2, 'catalog/language/zh-hk/product/search.php', '2018-12-02 06:00:35'),
+(1025, 2, 'catalog/language/zh-hk/product/special.php', '2018-12-02 06:00:35'),
+(1026, 2, 'catalog/language/zh-hk/tool/upload.php', '2018-12-02 06:00:35'),
+(1027, 2, 'admin/language/zh-hk/extension/analytics/google.php', '2018-12-02 06:00:35'),
+(1028, 2, 'admin/language/zh-hk/extension/captcha/basic.php', '2018-12-02 06:00:35'),
+(1029, 2, 'admin/language/zh-hk/extension/captcha/google.php', '2018-12-02 06:00:35'),
+(1030, 2, 'admin/language/zh-hk/extension/dashboard/activity.php', '2018-12-02 06:00:35'),
+(1031, 2, 'admin/language/zh-hk/extension/dashboard/chart.php', '2018-12-02 06:00:35'),
+(1032, 2, 'admin/language/zh-hk/extension/dashboard/customer.php', '2018-12-02 06:00:35'),
+(1033, 2, 'admin/language/zh-hk/extension/dashboard/map.php', '2018-12-02 06:00:35'),
+(1034, 2, 'admin/language/zh-hk/extension/dashboard/online.php', '2018-12-02 06:00:35'),
+(1035, 2, 'admin/language/zh-hk/extension/dashboard/order.php', '2018-12-02 06:00:35'),
+(1036, 2, 'admin/language/zh-hk/extension/dashboard/recent.php', '2018-12-02 06:00:35'),
+(1037, 2, 'admin/language/zh-hk/extension/dashboard/sale.php', '2018-12-02 06:00:35'),
+(1038, 2, 'admin/language/zh-hk/extension/extension/analytics.php', '2018-12-02 06:00:35'),
+(1039, 2, 'admin/language/zh-hk/extension/extension/captcha.php', '2018-12-02 06:00:35'),
+(1040, 2, 'admin/language/zh-hk/extension/extension/dashboard.php', '2018-12-02 06:00:35'),
+(1041, 2, 'admin/language/zh-hk/extension/extension/feed.php', '2018-12-02 06:00:35'),
+(1042, 2, 'admin/language/zh-hk/extension/extension/fraud.php', '2018-12-02 06:00:35'),
+(1043, 2, 'admin/language/zh-hk/extension/extension/marketing.php', '2018-12-02 06:00:35'),
+(1044, 2, 'admin/language/zh-hk/extension/extension/menu.php', '2018-12-02 06:00:35'),
+(1045, 2, 'admin/language/zh-hk/extension/extension/module.php', '2018-12-02 06:00:35'),
+(1046, 2, 'admin/language/zh-hk/extension/extension/other.php', '2018-12-02 06:00:35'),
+(1047, 2, 'admin/language/zh-hk/extension/extension/payment.php', '2018-12-02 06:00:35'),
+(1048, 2, 'admin/language/zh-hk/extension/extension/report.php', '2018-12-02 06:00:35'),
+(1049, 2, 'admin/language/zh-hk/extension/extension/shipping.php', '2018-12-02 06:00:35'),
+(1050, 2, 'admin/language/zh-hk/extension/extension/theme.php', '2018-12-02 06:00:35'),
+(1051, 2, 'admin/language/zh-hk/extension/extension/total.php', '2018-12-02 06:00:35'),
+(1052, 2, 'admin/language/zh-hk/extension/feed/google_base.php', '2018-12-02 06:00:35'),
+(1053, 2, 'admin/language/zh-hk/extension/feed/google_sitemap.php', '2018-12-02 06:00:35'),
+(1054, 2, 'admin/language/zh-hk/extension/feed/openbaypro.php', '2018-12-02 06:00:35'),
+(1055, 2, 'admin/language/zh-hk/extension/fraud/fraudlabspro.php', '2018-12-02 06:00:35'),
+(1056, 2, 'admin/language/zh-hk/extension/fraud/ip.php', '2018-12-02 06:00:35'),
+(1057, 2, 'admin/language/zh-hk/extension/fraud/maxmind.php', '2018-12-02 06:00:35'),
+(1058, 2, 'admin/language/zh-hk/extension/menu/default.php', '2018-12-02 06:00:35'),
+(1059, 2, 'admin/language/zh-hk/extension/module/account.php', '2018-12-02 06:00:35'),
+(1060, 2, 'admin/language/zh-hk/extension/module/amazon_login.php', '2018-12-02 06:00:35'),
+(1061, 2, 'admin/language/zh-hk/extension/module/amazon_pay.php', '2018-12-02 06:00:35'),
+(1062, 2, 'admin/language/zh-hk/extension/module/banner.php', '2018-12-02 06:00:35'),
+(1063, 2, 'admin/language/zh-hk/extension/module/bestseller.php', '2018-12-02 06:00:35'),
+(1064, 2, 'admin/language/zh-hk/extension/module/carousel.php', '2018-12-02 06:00:35'),
+(1065, 2, 'admin/language/zh-hk/extension/module/category.php', '2018-12-02 06:00:35'),
+(1066, 2, 'admin/language/zh-hk/extension/module/divido_calculator.php', '2018-12-02 06:00:35'),
+(1067, 2, 'admin/language/zh-hk/extension/module/ebay_listing.php', '2018-12-02 06:00:35'),
+(1068, 2, 'admin/language/zh-hk/extension/module/featured.php', '2018-12-02 06:00:35'),
+(1069, 2, 'admin/language/zh-hk/extension/module/filter.php', '2018-12-02 06:00:35'),
+(1070, 2, 'admin/language/zh-hk/extension/module/google_hangouts.php', '2018-12-02 06:00:35'),
+(1071, 2, 'admin/language/zh-hk/extension/module/html.php', '2018-12-02 06:00:35'),
+(1072, 2, 'admin/language/zh-hk/extension/module/information.php', '2018-12-02 06:00:35'),
+(1073, 2, 'admin/language/zh-hk/extension/module/klarna_checkout_module.php', '2018-12-02 06:00:35'),
+(1074, 2, 'admin/language/zh-hk/extension/module/latest.php', '2018-12-02 06:00:35'),
+(1075, 2, 'admin/language/zh-hk/extension/module/laybuy_layout.php', '2018-12-02 06:00:35'),
+(1076, 2, 'admin/language/zh-hk/extension/module/pilibaba_button.php', '2018-12-02 06:00:35'),
+(1077, 2, 'admin/language/zh-hk/extension/module/pp_braintree_button.php', '2018-12-02 06:00:35'),
+(1078, 2, 'admin/language/zh-hk/extension/module/pp_button.php', '2018-12-02 06:00:35'),
+(1079, 2, 'admin/language/zh-hk/extension/module/pp_login.php', '2018-12-02 06:00:35'),
+(1080, 2, 'admin/language/zh-hk/extension/module/sagepay_direct_cards.php', '2018-12-02 06:00:35'),
+(1081, 2, 'admin/language/zh-hk/extension/module/sagepay_server_cards.php', '2018-12-02 06:00:35'),
+(1082, 2, 'admin/language/zh-hk/extension/module/slideshow.php', '2018-12-02 06:00:35'),
+(1083, 2, 'admin/language/zh-hk/extension/module/special.php', '2018-12-02 06:00:35'),
+(1084, 2, 'admin/language/zh-hk/extension/module/store.php', '2018-12-02 06:00:35'),
+(1085, 2, 'admin/language/zh-hk/extension/openbay/amazon.php', '2018-12-02 06:00:35'),
+(1086, 2, 'admin/language/zh-hk/extension/openbay/amazon_bulk_linking.php', '2018-12-02 06:00:35'),
+(1087, 2, 'admin/language/zh-hk/extension/openbay/amazon_bulk_listing.php', '2018-12-02 06:00:35'),
+(1088, 2, 'admin/language/zh-hk/extension/openbay/amazon_links.php', '2018-12-02 06:00:35'),
+(1089, 2, 'admin/language/zh-hk/extension/openbay/amazon_listing.php', '2018-12-02 06:00:35'),
+(1090, 2, 'admin/language/zh-hk/extension/openbay/amazon_listingsaved.php', '2018-12-02 06:00:35'),
+(1091, 2, 'admin/language/zh-hk/extension/openbay/amazon_settings.php', '2018-12-02 06:00:35'),
+(1092, 2, 'admin/language/zh-hk/extension/openbay/amazon_stockupdates.php', '2018-12-02 06:00:35'),
+(1093, 2, 'admin/language/zh-hk/extension/openbay/amazon_subscription.php', '2018-12-02 06:00:35'),
+(1094, 2, 'admin/language/zh-hk/extension/openbay/amazonus.php', '2018-12-02 06:00:35'),
+(1095, 2, 'admin/language/zh-hk/extension/openbay/amazonus_bulk_linking.php', '2018-12-02 06:00:35'),
+(1096, 2, 'admin/language/zh-hk/extension/openbay/amazonus_bulk_listing.php', '2018-12-02 06:00:35'),
+(1097, 2, 'admin/language/zh-hk/extension/openbay/amazonus_links.php', '2018-12-02 06:00:35'),
+(1098, 2, 'admin/language/zh-hk/extension/openbay/amazonus_listing.php', '2018-12-02 06:00:35'),
+(1099, 2, 'admin/language/zh-hk/extension/openbay/amazonus_listingsaved.php', '2018-12-02 06:00:35'),
+(1100, 2, 'admin/language/zh-hk/extension/openbay/amazonus_settings.php', '2018-12-02 06:00:35'),
+(1101, 2, 'admin/language/zh-hk/extension/openbay/amazonus_stockupdates.php', '2018-12-02 06:00:35'),
+(1102, 2, 'admin/language/zh-hk/extension/openbay/amazonus_subscription.php', '2018-12-02 06:00:35'),
+(1103, 2, 'admin/language/zh-hk/extension/openbay/ebay.php', '2018-12-02 06:00:35'),
+(1104, 2, 'admin/language/zh-hk/extension/openbay/ebay_edit.php', '2018-12-02 06:00:35'),
+(1105, 2, 'admin/language/zh-hk/extension/openbay/ebay_import.php', '2018-12-02 06:00:35'),
+(1106, 2, 'admin/language/zh-hk/extension/openbay/ebay_links.php', '2018-12-02 06:00:35'),
+(1107, 2, 'admin/language/zh-hk/extension/openbay/ebay_new.php', '2018-12-02 06:00:35'),
+(1108, 2, 'admin/language/zh-hk/extension/openbay/ebay_newbulk.php', '2018-12-02 06:00:35'),
+(1109, 2, 'admin/language/zh-hk/extension/openbay/ebay_orders.php', '2018-12-02 06:00:35'),
+(1110, 2, 'admin/language/zh-hk/extension/openbay/ebay_profile.php', '2018-12-02 06:00:35'),
+(1111, 2, 'admin/language/zh-hk/extension/openbay/ebay_settings.php', '2018-12-02 06:00:35'),
+(1112, 2, 'admin/language/zh-hk/extension/openbay/ebay_subscription.php', '2018-12-02 06:00:35'),
+(1113, 2, 'admin/language/zh-hk/extension/openbay/ebay_summary.php', '2018-12-02 06:00:35'),
+(1114, 2, 'admin/language/zh-hk/extension/openbay/ebay_syncronise.php', '2018-12-02 06:00:35'),
+(1115, 2, 'admin/language/zh-hk/extension/openbay/ebay_template.php', '2018-12-02 06:00:35'),
+(1116, 2, 'admin/language/zh-hk/extension/openbay/ebay_usage.php', '2018-12-02 06:00:35'),
+(1117, 2, 'admin/language/zh-hk/extension/openbay/etsy.php', '2018-12-02 06:00:35'),
+(1118, 2, 'admin/language/zh-hk/extension/openbay/etsy_create.php', '2018-12-02 06:00:35'),
+(1119, 2, 'admin/language/zh-hk/extension/openbay/etsy_edit.php', '2018-12-02 06:00:35'),
+(1120, 2, 'admin/language/zh-hk/extension/openbay/etsy_links.php', '2018-12-02 06:00:35'),
+(1121, 2, 'admin/language/zh-hk/extension/openbay/etsy_listings.php', '2018-12-02 06:00:35'),
+(1122, 2, 'admin/language/zh-hk/extension/openbay/etsy_settings.php', '2018-12-02 06:00:35'),
+(1123, 2, 'admin/language/zh-hk/extension/openbay/fba.php', '2018-12-02 06:00:35'),
+(1124, 2, 'admin/language/zh-hk/extension/openbay/fba_fulfillment.php', '2018-12-02 06:00:35'),
+(1125, 2, 'admin/language/zh-hk/extension/openbay/fba_fulfillment_list.php', '2018-12-02 06:00:35'),
+(1126, 2, 'admin/language/zh-hk/extension/openbay/fba_order.php', '2018-12-02 06:00:35'),
+(1127, 2, 'admin/language/zh-hk/extension/openbay/fba_settings.php', '2018-12-02 06:00:35'),
+(1128, 2, 'admin/language/zh-hk/extension/openbay/openbay_itemlist.php', '2018-12-02 06:00:35'),
+(1129, 2, 'admin/language/zh-hk/extension/openbay/openbay_menu.php', '2018-12-02 06:00:35'),
+(1130, 2, 'admin/language/zh-hk/extension/openbay/openbay_order.php', '2018-12-02 06:00:35'),
+(1131, 2, 'admin/language/zh-hk/extension/payment/alipay.php', '2018-12-02 06:00:35'),
+(1132, 2, 'admin/language/zh-hk/extension/payment/alipay_cross.php', '2018-12-02 06:00:35'),
+(1133, 2, 'admin/language/zh-hk/extension/payment/amazon_login_pay.php', '2018-12-02 06:00:35'),
+(1134, 2, 'admin/language/zh-hk/extension/payment/authorizenet_aim.php', '2018-12-02 06:00:35'),
+(1135, 2, 'admin/language/zh-hk/extension/payment/authorizenet_sim.php', '2018-12-02 06:00:35'),
+(1136, 2, 'admin/language/zh-hk/extension/payment/bank_transfer.php', '2018-12-02 06:00:35'),
+(1137, 2, 'admin/language/zh-hk/extension/payment/bluepay_hosted.php', '2018-12-02 06:00:35'),
+(1138, 2, 'admin/language/zh-hk/extension/payment/bluepay_redirect.php', '2018-12-02 06:00:35'),
+(1139, 2, 'admin/language/zh-hk/extension/payment/cardconnect.php', '2018-12-02 06:00:35'),
+(1140, 2, 'admin/language/zh-hk/extension/payment/cardinity.php', '2018-12-02 06:00:35'),
+(1141, 2, 'admin/language/zh-hk/extension/payment/cheque.php', '2018-12-02 06:00:35'),
+(1142, 2, 'admin/language/zh-hk/extension/payment/cod.php', '2018-12-02 06:00:35'),
+(1143, 2, 'admin/language/zh-hk/extension/payment/divido.php', '2018-12-02 06:00:35'),
+(1144, 2, 'admin/language/zh-hk/extension/payment/eway.php', '2018-12-02 06:00:35'),
+(1145, 2, 'admin/language/zh-hk/extension/payment/firstdata.php', '2018-12-02 06:00:35'),
+(1146, 2, 'admin/language/zh-hk/extension/payment/firstdata_remote.php', '2018-12-02 06:00:35'),
+(1147, 2, 'admin/language/zh-hk/extension/payment/free_checkout.php', '2018-12-02 06:00:35'),
+(1148, 2, 'admin/language/zh-hk/extension/payment/g2apay.php', '2018-12-02 06:00:35'),
+(1149, 2, 'admin/language/zh-hk/extension/payment/globalpay.php', '2018-12-02 06:00:35'),
+(1150, 2, 'admin/language/zh-hk/extension/payment/globalpay_remote.php', '2018-12-02 06:00:35'),
+(1151, 2, 'admin/language/zh-hk/extension/payment/klarna_account.php', '2018-12-02 06:00:35'),
+(1152, 2, 'admin/language/zh-hk/extension/payment/klarna_checkout.php', '2018-12-02 06:00:35'),
+(1153, 2, 'admin/language/zh-hk/extension/payment/klarna_invoice.php', '2018-12-02 06:00:35'),
+(1154, 2, 'admin/language/zh-hk/extension/payment/laybuy.php', '2018-12-02 06:00:35'),
+(1155, 2, 'admin/language/zh-hk/extension/payment/liqpay.php', '2018-12-02 06:00:35'),
+(1156, 2, 'admin/language/zh-hk/extension/payment/nochex.php', '2018-12-02 06:00:35'),
+(1157, 2, 'admin/language/zh-hk/extension/payment/paymate.php', '2018-12-02 06:00:35'),
+(1158, 2, 'admin/language/zh-hk/extension/payment/paypoint.php', '2018-12-02 06:00:35'),
+(1159, 2, 'admin/language/zh-hk/extension/payment/payza.php', '2018-12-02 06:00:35'),
+(1160, 2, 'admin/language/zh-hk/extension/payment/perpetual_payments.php', '2018-12-02 06:00:35'),
+(1161, 2, 'admin/language/zh-hk/extension/payment/pilibaba.php', '2018-12-02 06:00:35'),
+(1162, 2, 'admin/language/zh-hk/extension/payment/pp_braintree.php', '2018-12-02 06:00:35'),
+(1163, 2, 'admin/language/zh-hk/extension/payment/pp_express.php', '2018-12-02 06:00:35'),
+(1164, 2, 'admin/language/zh-hk/extension/payment/pp_express_order.php', '2018-12-02 06:00:35'),
+(1165, 2, 'admin/language/zh-hk/extension/payment/pp_express_refund.php', '2018-12-02 06:00:35'),
+(1166, 2, 'admin/language/zh-hk/extension/payment/pp_express_search.php', '2018-12-02 06:00:35'),
+(1167, 2, 'admin/language/zh-hk/extension/payment/pp_express_view.php', '2018-12-02 06:00:35'),
+(1168, 2, 'admin/language/zh-hk/extension/payment/pp_payflow.php', '2018-12-02 06:00:35'),
+(1169, 2, 'admin/language/zh-hk/extension/payment/pp_payflow_iframe.php', '2018-12-02 06:00:35'),
+(1170, 2, 'admin/language/zh-hk/extension/payment/pp_pro.php', '2018-12-02 06:00:35'),
+(1171, 2, 'admin/language/zh-hk/extension/payment/pp_pro_iframe.php', '2018-12-02 06:00:35'),
+(1172, 2, 'admin/language/zh-hk/extension/payment/pp_standard.php', '2018-12-02 06:00:35'),
+(1173, 2, 'admin/language/zh-hk/extension/payment/realex.php', '2018-12-02 06:00:35'),
+(1174, 2, 'admin/language/zh-hk/extension/payment/realex_remote.php', '2018-12-02 06:00:35'),
+(1175, 2, 'admin/language/zh-hk/extension/payment/sagepay_direct.php', '2018-12-02 06:00:35'),
+(1176, 2, 'admin/language/zh-hk/extension/payment/sagepay_server.php', '2018-12-02 06:00:35'),
+(1177, 2, 'admin/language/zh-hk/extension/payment/sagepay_us.php', '2018-12-02 06:00:35'),
+(1178, 2, 'admin/language/zh-hk/extension/payment/securetrading_pp.php', '2018-12-02 06:00:35'),
+(1179, 2, 'admin/language/zh-hk/extension/payment/securetrading_ws.php', '2018-12-02 06:00:35'),
+(1180, 2, 'admin/language/zh-hk/extension/payment/skrill.php', '2018-12-02 06:00:35'),
+(1181, 2, 'admin/language/zh-hk/extension/payment/squareup.php', '2018-12-02 06:00:35'),
+(1182, 2, 'admin/language/zh-hk/extension/payment/twocheckout.php', '2018-12-02 06:00:35'),
+(1183, 2, 'admin/language/zh-hk/extension/payment/web_payment_software.php', '2018-12-02 06:00:35'),
+(1184, 2, 'admin/language/zh-hk/extension/payment/wechat_pay.php', '2018-12-02 06:00:35'),
+(1185, 2, 'admin/language/zh-hk/extension/payment/worldpay.php', '2018-12-02 06:00:35'),
+(1186, 2, 'admin/language/zh-hk/extension/report/customer_activity.php', '2018-12-02 06:00:35'),
+(1187, 2, 'admin/language/zh-hk/extension/report/customer_order.php', '2018-12-02 06:00:35'),
+(1188, 2, 'admin/language/zh-hk/extension/report/customer_reward.php', '2018-12-02 06:00:35'),
+(1189, 2, 'admin/language/zh-hk/extension/report/customer_search.php', '2018-12-02 06:00:35'),
+(1190, 2, 'admin/language/zh-hk/extension/report/customer_transaction.php', '2018-12-02 06:00:35'),
+(1191, 2, 'admin/language/zh-hk/extension/report/marketing.php', '2018-12-02 06:00:35'),
+(1192, 2, 'admin/language/zh-hk/extension/report/product_purchased.php', '2018-12-02 06:00:35'),
+(1193, 2, 'admin/language/zh-hk/extension/report/product_viewed.php', '2018-12-02 06:00:35'),
+(1194, 2, 'admin/language/zh-hk/extension/report/sale_coupon.php', '2018-12-02 06:00:35'),
+(1195, 2, 'admin/language/zh-hk/extension/report/sale_order.php', '2018-12-02 06:00:35'),
+(1196, 2, 'admin/language/zh-hk/extension/report/sale_return.php', '2018-12-02 06:00:35'),
+(1197, 2, 'admin/language/zh-hk/extension/report/sale_shipping.php', '2018-12-02 06:00:35'),
+(1198, 2, 'admin/language/zh-hk/extension/report/sale_tax.php', '2018-12-02 06:00:35'),
+(1199, 2, 'admin/language/zh-hk/extension/shipping/auspost.php', '2018-12-02 06:00:35'),
+(1200, 2, 'admin/language/zh-hk/extension/shipping/citylink.php', '2018-12-02 06:00:35'),
+(1201, 2, 'admin/language/zh-hk/extension/shipping/ec_ship.php', '2018-12-02 06:00:35'),
+(1202, 2, 'admin/language/zh-hk/extension/shipping/fedex.php', '2018-12-02 06:00:35'),
+(1203, 2, 'admin/language/zh-hk/extension/shipping/flat.php', '2018-12-02 06:00:35'),
+(1204, 2, 'admin/language/zh-hk/extension/shipping/free.php', '2018-12-02 06:00:35'),
+(1205, 2, 'admin/language/zh-hk/extension/shipping/item.php', '2018-12-02 06:00:35'),
+(1206, 2, 'admin/language/zh-hk/extension/shipping/parcelforce_48.php', '2018-12-02 06:00:35'),
+(1207, 2, 'admin/language/zh-hk/extension/shipping/pickup.php', '2018-12-02 06:00:35'),
+(1208, 2, 'admin/language/zh-hk/extension/shipping/royal_mail.php', '2018-12-02 06:00:35'),
+(1209, 2, 'admin/language/zh-hk/extension/shipping/ups.php', '2018-12-02 06:00:35'),
+(1210, 2, 'admin/language/zh-hk/extension/shipping/usps.php', '2018-12-02 06:00:35'),
+(1211, 2, 'admin/language/zh-hk/extension/shipping/weight.php', '2018-12-02 06:00:35'),
+(1212, 2, 'admin/language/zh-hk/extension/theme/default.php', '2018-12-02 06:00:35'),
+(1213, 2, 'admin/language/zh-hk/extension/total/coupon.php', '2018-12-02 06:00:35'),
+(1214, 2, 'admin/language/zh-hk/extension/total/credit.php', '2018-12-02 06:00:35'),
+(1215, 2, 'admin/language/zh-hk/extension/total/handling.php', '2018-12-02 06:00:35'),
+(1216, 2, 'admin/language/zh-hk/extension/total/klarna_fee.php', '2018-12-02 06:00:35'),
+(1217, 2, 'admin/language/zh-hk/extension/total/low_order_fee.php', '2018-12-02 06:00:35'),
+(1218, 2, 'admin/language/zh-hk/extension/total/reward.php', '2018-12-02 06:00:35'),
+(1219, 2, 'admin/language/zh-hk/extension/total/shipping.php', '2018-12-02 06:00:35'),
+(1220, 2, 'admin/language/zh-hk/extension/total/sub_total.php', '2018-12-02 06:00:35'),
+(1221, 2, 'admin/language/zh-hk/extension/total/tax.php', '2018-12-02 06:00:35'),
+(1222, 2, 'admin/language/zh-hk/extension/total/total.php', '2018-12-02 06:00:35'),
+(1223, 2, 'admin/language/zh-hk/extension/total/voucher.php', '2018-12-02 06:00:35'),
+(1224, 2, 'catalog/language/zh-hk/extension/captcha/basic.php', '2018-12-02 06:00:35'),
+(1225, 2, 'catalog/language/zh-hk/extension/captcha/google.php', '2018-12-02 06:00:35'),
+(1226, 2, 'catalog/language/zh-hk/extension/credit_card/sagepay_direct.php', '2018-12-02 06:00:35'),
+(1227, 2, 'catalog/language/zh-hk/extension/credit_card/sagepay_server.php', '2018-12-02 06:00:35'),
+(1228, 2, 'catalog/language/zh-hk/extension/credit_card/squareup.php', '2018-12-02 06:00:35'),
+(1229, 2, 'catalog/language/zh-hk/extension/module/account.php', '2018-12-02 06:00:35'),
+(1230, 2, 'catalog/language/zh-hk/extension/module/amazon_login.php', '2018-12-02 06:00:35'),
+(1231, 2, 'catalog/language/zh-hk/extension/module/amazon_pay.php', '2018-12-02 06:00:35'),
+(1232, 2, 'catalog/language/zh-hk/extension/module/bestseller.php', '2018-12-02 06:00:35'),
+(1233, 2, 'catalog/language/zh-hk/extension/module/category.php', '2018-12-02 06:00:35'),
+(1234, 2, 'catalog/language/zh-hk/extension/module/divido_calculator.php', '2018-12-02 06:00:35'),
+(1235, 2, 'catalog/language/zh-hk/extension/module/ebay_listing.php', '2018-12-02 06:00:35'),
+(1236, 2, 'catalog/language/zh-hk/extension/module/featured.php', '2018-12-02 06:00:35'),
+(1237, 2, 'catalog/language/zh-hk/extension/module/filter.php', '2018-12-02 06:00:35'),
+(1238, 2, 'catalog/language/zh-hk/extension/module/google_hangouts.php', '2018-12-02 06:00:35'),
+(1239, 2, 'catalog/language/zh-hk/extension/module/information.php', '2018-12-02 06:00:35'),
+(1240, 2, 'catalog/language/zh-hk/extension/module/latest.php', '2018-12-02 06:00:35'),
+(1241, 2, 'catalog/language/zh-hk/extension/module/laybuy_layout.php', '2018-12-02 06:00:35'),
+(1242, 2, 'catalog/language/zh-hk/extension/module/special.php', '2018-12-02 06:00:35'),
+(1243, 2, 'catalog/language/zh-hk/extension/module/store.php', '2018-12-02 06:00:35'),
+(1244, 2, 'catalog/language/zh-hk/extension/openbay/amazon_order.php', '2018-12-02 06:00:35'),
+(1245, 2, 'catalog/language/zh-hk/extension/openbay/amazonus_order.php', '2018-12-02 06:00:35'),
+(1246, 2, 'catalog/language/zh-hk/extension/openbay/ebay_order.php', '2018-12-02 06:00:35'),
+(1247, 2, 'catalog/language/zh-hk/extension/openbay/etsy_order.php', '2018-12-02 06:00:35'),
+(1248, 2, 'catalog/language/zh-hk/extension/payment/alipay.php', '2018-12-02 06:00:35'),
+(1249, 2, 'catalog/language/zh-hk/extension/payment/alipay_cross.php', '2018-12-02 06:00:35'),
+(1250, 2, 'catalog/language/zh-hk/extension/payment/amazon_login_pay.php', '2018-12-02 06:00:35'),
+(1251, 2, 'catalog/language/zh-hk/extension/payment/authorizenet_aim.php', '2018-12-02 06:00:35'),
+(1252, 2, 'catalog/language/zh-hk/extension/payment/authorizenet_sim.php', '2018-12-02 06:00:35'),
+(1253, 2, 'catalog/language/zh-hk/extension/payment/bank_transfer.php', '2018-12-02 06:00:35'),
+(1254, 2, 'catalog/language/zh-hk/extension/payment/bluepay_hosted.php', '2018-12-02 06:00:35'),
+(1255, 2, 'catalog/language/zh-hk/extension/payment/bluepay_redirect.php', '2018-12-02 06:00:35'),
+(1256, 2, 'catalog/language/zh-hk/extension/payment/cardconnect.php', '2018-12-02 06:00:35'),
+(1257, 2, 'catalog/language/zh-hk/extension/payment/cardinity.php', '2018-12-02 06:00:35'),
+(1258, 2, 'catalog/language/zh-hk/extension/payment/cheque.php', '2018-12-02 06:00:35'),
+(1259, 2, 'catalog/language/zh-hk/extension/payment/cod.php', '2018-12-02 06:00:35'),
+(1260, 2, 'catalog/language/zh-hk/extension/payment/divido.php', '2018-12-02 06:00:35'),
+(1261, 2, 'catalog/language/zh-hk/extension/payment/eway.php', '2018-12-02 06:00:35'),
+(1262, 2, 'catalog/language/zh-hk/extension/payment/firstdata.php', '2018-12-02 06:00:35'),
+(1263, 2, 'catalog/language/zh-hk/extension/payment/firstdata_remote.php', '2018-12-02 06:00:35'),
+(1264, 2, 'catalog/language/zh-hk/extension/payment/free_checkout.php', '2018-12-02 06:00:35'),
+(1265, 2, 'catalog/language/zh-hk/extension/payment/g2apay.php', '2018-12-02 06:00:35'),
+(1266, 2, 'catalog/language/zh-hk/extension/payment/globalpay.php', '2018-12-02 06:00:35'),
+(1267, 2, 'catalog/language/zh-hk/extension/payment/globalpay_remote.php', '2018-12-02 06:00:35'),
+(1268, 2, 'catalog/language/zh-hk/extension/payment/klarna_account.php', '2018-12-02 06:00:35'),
+(1269, 2, 'catalog/language/zh-hk/extension/payment/klarna_checkout.php', '2018-12-02 06:00:35'),
+(1270, 2, 'catalog/language/zh-hk/extension/payment/klarna_invoice.php', '2018-12-02 06:00:35'),
+(1271, 2, 'catalog/language/zh-hk/extension/payment/laybuy.php', '2018-12-02 06:00:35'),
+(1272, 2, 'catalog/language/zh-hk/extension/payment/liqpay.php', '2018-12-02 06:00:35'),
+(1273, 2, 'catalog/language/zh-hk/extension/payment/nochex.php', '2018-12-02 06:00:35'),
+(1274, 2, 'catalog/language/zh-hk/extension/payment/paymate.php', '2018-12-02 06:00:35'),
+(1275, 2, 'catalog/language/zh-hk/extension/payment/paypoint.php', '2018-12-02 06:00:35'),
+(1276, 2, 'catalog/language/zh-hk/extension/payment/payza.php', '2018-12-02 06:00:35'),
+(1277, 2, 'catalog/language/zh-hk/extension/payment/perpetual_payments.php', '2018-12-02 06:00:35'),
+(1278, 2, 'catalog/language/zh-hk/extension/payment/pilibaba.php', '2018-12-02 06:00:35'),
+(1279, 2, 'catalog/language/zh-hk/extension/payment/pp_braintree.php', '2018-12-02 06:00:35'),
+(1280, 2, 'catalog/language/zh-hk/extension/payment/pp_express.php', '2018-12-02 06:00:35'),
+(1281, 2, 'catalog/language/zh-hk/extension/payment/pp_payflow.php', '2018-12-02 06:00:35'),
+(1282, 2, 'catalog/language/zh-hk/extension/payment/pp_payflow_iframe.php', '2018-12-02 06:00:35'),
+(1283, 2, 'catalog/language/zh-hk/extension/payment/pp_pro.php', '2018-12-02 06:00:35'),
+(1284, 2, 'catalog/language/zh-hk/extension/payment/pp_pro_iframe.php', '2018-12-02 06:00:35'),
+(1285, 2, 'catalog/language/zh-hk/extension/payment/pp_standard.php', '2018-12-02 06:00:35'),
+(1286, 2, 'catalog/language/zh-hk/extension/payment/realex.php', '2018-12-02 06:00:35'),
+(1287, 2, 'catalog/language/zh-hk/extension/payment/realex_remote.php', '2018-12-02 06:00:35'),
+(1288, 2, 'catalog/language/zh-hk/extension/payment/sagepay_direct.php', '2018-12-02 06:00:35'),
+(1289, 2, 'catalog/language/zh-hk/extension/payment/sagepay_server.php', '2018-12-02 06:00:35'),
+(1290, 2, 'catalog/language/zh-hk/extension/payment/sagepay_us.php', '2018-12-02 06:00:35'),
+(1291, 2, 'catalog/language/zh-hk/extension/payment/securetrading_pp.php', '2018-12-02 06:00:35'),
+(1292, 2, 'catalog/language/zh-hk/extension/payment/securetrading_ws.php', '2018-12-02 06:00:35'),
+(1293, 2, 'catalog/language/zh-hk/extension/payment/skrill.php', '2018-12-02 06:00:35'),
+(1294, 2, 'catalog/language/zh-hk/extension/payment/squareup.php', '2018-12-02 06:00:35'),
+(1295, 2, 'catalog/language/zh-hk/extension/payment/twocheckout.php', '2018-12-02 06:00:35'),
+(1296, 2, 'catalog/language/zh-hk/extension/payment/web_payment_software.php', '2018-12-02 06:00:35'),
+(1297, 2, 'catalog/language/zh-hk/extension/payment/wechat_pay.php', '2018-12-02 06:00:35'),
+(1298, 2, 'catalog/language/zh-hk/extension/payment/worldpay.php', '2018-12-02 06:00:35'),
+(1299, 2, 'catalog/language/zh-hk/extension/recurring/pp_express.php', '2018-12-02 06:00:35'),
+(1300, 2, 'catalog/language/zh-hk/extension/recurring/squareup.php', '2018-12-02 06:00:35'),
+(1301, 2, 'catalog/language/zh-hk/extension/shipping/auspost.php', '2018-12-02 06:00:35'),
+(1302, 2, 'catalog/language/zh-hk/extension/shipping/citylink.php', '2018-12-02 06:00:35'),
+(1303, 2, 'catalog/language/zh-hk/extension/shipping/ec_ship.php', '2018-12-02 06:00:35'),
+(1304, 2, 'catalog/language/zh-hk/extension/shipping/fedex.php', '2018-12-02 06:00:35'),
+(1305, 2, 'catalog/language/zh-hk/extension/shipping/flat.php', '2018-12-02 06:00:35'),
+(1306, 2, 'catalog/language/zh-hk/extension/shipping/free.php', '2018-12-02 06:00:35'),
+(1307, 2, 'catalog/language/zh-hk/extension/shipping/item.php', '2018-12-02 06:00:35'),
+(1308, 2, 'catalog/language/zh-hk/extension/shipping/parcelforce_48.php', '2018-12-02 06:00:35'),
+(1309, 2, 'catalog/language/zh-hk/extension/shipping/pickup.php', '2018-12-02 06:00:35'),
+(1310, 2, 'catalog/language/zh-hk/extension/shipping/pilibaba.php', '2018-12-02 06:00:35'),
+(1311, 2, 'catalog/language/zh-hk/extension/shipping/royal_mail.php', '2018-12-02 06:00:35'),
+(1312, 2, 'catalog/language/zh-hk/extension/shipping/ups.php', '2018-12-02 06:00:35'),
+(1313, 2, 'catalog/language/zh-hk/extension/shipping/usps.php', '2018-12-02 06:00:35'),
+(1314, 2, 'catalog/language/zh-hk/extension/shipping/weight.php', '2018-12-02 06:00:35'),
+(1315, 2, 'catalog/language/zh-hk/extension/total/coupon.php', '2018-12-02 06:00:35'),
+(1316, 2, 'catalog/language/zh-hk/extension/total/credit.php', '2018-12-02 06:00:35'),
+(1317, 2, 'catalog/language/zh-hk/extension/total/handling.php', '2018-12-02 06:00:35'),
+(1318, 2, 'catalog/language/zh-hk/extension/total/klarna_fee.php', '2018-12-02 06:00:35'),
+(1319, 2, 'catalog/language/zh-hk/extension/total/low_order_fee.php', '2018-12-02 06:00:35'),
+(1320, 2, 'catalog/language/zh-hk/extension/total/reward.php', '2018-12-02 06:00:35'),
+(1321, 2, 'catalog/language/zh-hk/extension/total/shipping.php', '2018-12-02 06:00:35'),
+(1322, 2, 'catalog/language/zh-hk/extension/total/sub_total.php', '2018-12-02 06:00:35'),
+(1323, 2, 'catalog/language/zh-hk/extension/total/total.php', '2018-12-02 06:00:35'),
+(1324, 2, 'catalog/language/zh-hk/extension/total/voucher.php', '2018-12-02 06:00:35');
 
 -- --------------------------------------------------------
 
@@ -1515,7 +2531,11 @@ INSERT INTO `op_information_description` (`information_id`, `language_id`, `titl
 (4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
 (5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', ''),
 (3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', ''),
-(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', '');
+(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', ''),
+(4, 2, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
+(5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', ''),
+(3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', ''),
+(6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', '');
 
 -- --------------------------------------------------------
 
@@ -1572,7 +2592,8 @@ CREATE TABLE `op_language` (
 --
 
 INSERT INTO `op_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
-(1, 'English', 'en-gb', 'en-US,en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 1, 1);
+(1, 'English', 'en-gb', 'en-US,en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 1, 1),
+(2, 'T-chinese', 'zh-hk', 'TW', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1706,7 +2727,10 @@ CREATE TABLE `op_length_class_description` (
 INSERT INTO `op_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 (1, 1, 'Centimeter', 'cm'),
 (2, 1, 'Millimeter', 'mm'),
-(3, 1, 'Inch', 'in');
+(3, 1, 'Inch', 'in'),
+(1, 2, 'Centimeter', 'cm'),
+(2, 2, 'Millimeter', 'mm'),
+(3, 2, 'Inch', 'in');
 
 -- --------------------------------------------------------
 
@@ -1808,6 +2832,13 @@ CREATE TABLE `op_modification` (
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- 資料表的匯出資料 `op_modification`
+--
+
+INSERT INTO `op_modification` (`modification_id`, `extension_install_id`, `name`, `code`, `author`, `version`, `link`, `xml`, `status`, `date_added`) VALUES
+(2, 2, '香港繁體中文語言包 OpenCart 3.0.X', 'x_tranditional_chinese', 'Jesse.C @ Kurosus.hk', '1.0.0', 'https://www.kurosus.hk', '<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<modification>\r\n  <name>香港繁體中文語言包 OpenCart 3.0.X</name>\r\n  <code>x_tranditional_chinese</code>\r\n  <version>1.0.0</version>\r\n  <author>Jesse.C @ Kurosus.hk</author>\r\n  <link>https://www.kurosus.hk</link>\r\n\r\n</modification>\r\n', 1, '2018-12-02 06:00:36');
+
 -- --------------------------------------------------------
 
 --
@@ -1888,7 +2919,18 @@ INSERT INTO `op_option_description` (`option_id`, `language_id`, `name`) VALUES
 (9, 1, 'Time'),
 (10, 1, 'Date &amp; Time'),
 (12, 1, 'Delivery Date'),
-(11, 1, 'Size');
+(11, 1, 'Size'),
+(1, 2, 'Radio'),
+(2, 2, 'Checkbox'),
+(4, 2, 'Text'),
+(6, 2, 'Textarea'),
+(8, 2, 'Date'),
+(7, 2, 'File'),
+(5, 2, 'Select'),
+(9, 2, 'Time'),
+(10, 2, 'Date &amp; Time'),
+(12, 2, 'Delivery Date'),
+(11, 2, 'Size');
 
 -- --------------------------------------------------------
 
@@ -1954,7 +2996,21 @@ INSERT INTO `op_option_value_description` (`option_value_id`, `language_id`, `op
 (24, 1, 2, 'Checkbox 2'),
 (48, 1, 11, 'Large'),
 (47, 1, 11, 'Medium'),
-(46, 1, 11, 'Small');
+(46, 1, 11, 'Small'),
+(43, 2, 1, 'Large'),
+(32, 2, 1, 'Small'),
+(45, 2, 2, 'Checkbox 4'),
+(44, 2, 2, 'Checkbox 3'),
+(31, 2, 1, 'Medium'),
+(42, 2, 5, 'Yellow'),
+(41, 2, 5, 'Green'),
+(39, 2, 5, 'Red'),
+(40, 2, 5, 'Blue'),
+(23, 2, 2, 'Checkbox 1'),
+(24, 2, 2, 'Checkbox 2'),
+(48, 2, 11, 'Large'),
+(47, 2, 11, 'Medium'),
+(46, 2, 11, 'Small');
 
 -- --------------------------------------------------------
 
@@ -2165,7 +3221,21 @@ INSERT INTO `op_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 (1, 1, 'Pending'),
 (16, 1, 'Voided'),
 (15, 1, 'Processed'),
-(14, 1, 'Expired');
+(14, 1, 'Expired'),
+(2, 2, 'Processing'),
+(3, 2, 'Shipped'),
+(7, 2, 'Canceled'),
+(5, 2, 'Complete'),
+(8, 2, 'Denied'),
+(9, 2, 'Canceled Reversal'),
+(10, 2, 'Failed'),
+(11, 2, 'Refunded'),
+(12, 2, 'Reversed'),
+(13, 2, 'Chargeback'),
+(1, 2, 'Pending'),
+(16, 2, 'Voided'),
+(15, 2, 'Processed'),
+(14, 2, 'Expired');
 
 -- --------------------------------------------------------
 
@@ -2201,6 +3271,17 @@ CREATE TABLE `op_order_voucher` (
   `voucher_theme_id` int(11) NOT NULL,
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `op_pavobuilder`
+--
+
+CREATE TABLE `op_pavobuilder` (
+  `module_uniqid_id` char(32) NOT NULL,
+  `settings` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2290,7 +3371,12 @@ INSERT INTO `op_product_attribute` (`product_id`, `attribute_id`, `language_id`,
 (47, 4, 1, '16GB'),
 (43, 4, 1, '8gb'),
 (42, 3, 1, '100mhz'),
-(47, 2, 1, '4');
+(47, 2, 1, '4'),
+(43, 2, 2, '1'),
+(47, 4, 2, '16GB'),
+(43, 4, 2, '8gb'),
+(42, 3, 2, '100mhz'),
+(47, 2, 2, '4');
 
 -- --------------------------------------------------------
 
@@ -2332,7 +3418,27 @@ INSERT INTO `op_product_description` (`product_id`, `language_id`, `name`, `desc
 (31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
 (49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
 (42, 1, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
-(30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
+(30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', ''),
+(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
+(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
+(40, 2, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', 'iPhone', '', ''),
+(28, 2, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '	 HTC Touch HD', '', ''),
+(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
+(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
+(29, 2, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
+(36, 2, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
+(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
+(47, 2, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
+(32, 2, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '	 iPod Touch', '', ''),
+(41, 2, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
+(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', 'Samsung SyncMaster 941BW', '', ''),
+(34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
+(43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
+(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
+(49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', '');
+INSERT INTO `op_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there\'s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it\'s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple\'s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO \'03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
+(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably \'chunkier\'). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR\'s, an important difference when compared to the latter is that the EOS 5D doesn\'t have any environmental seals. While Canon don\'t specifically refer to the EOS 5D as a \'professional\' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they\'ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
 
 -- --------------------------------------------------------
 
@@ -2809,7 +3915,10 @@ CREATE TABLE `op_return_action` (
 INSERT INTO `op_return_action` (`return_action_id`, `language_id`, `name`) VALUES
 (1, 1, 'Refunded'),
 (2, 1, 'Credit Issued'),
-(3, 1, 'Replacement Sent');
+(3, 1, 'Replacement Sent'),
+(1, 2, 'Refunded'),
+(2, 2, 'Credit Issued'),
+(3, 2, 'Replacement Sent');
 
 -- --------------------------------------------------------
 
@@ -2847,7 +3956,12 @@ INSERT INTO `op_return_reason` (`return_reason_id`, `language_id`, `name`) VALUE
 (2, 1, 'Received Wrong Item'),
 (3, 1, 'Order Error'),
 (4, 1, 'Faulty, please supply details'),
-(5, 1, 'Other, please supply details');
+(5, 1, 'Other, please supply details'),
+(1, 2, 'Dead On Arrival'),
+(2, 2, 'Received Wrong Item'),
+(3, 2, 'Order Error'),
+(4, 2, 'Faulty, please supply details'),
+(5, 2, 'Other, please supply details');
 
 -- --------------------------------------------------------
 
@@ -2868,7 +3982,10 @@ CREATE TABLE `op_return_status` (
 INSERT INTO `op_return_status` (`return_status_id`, `language_id`, `name`) VALUES
 (1, 1, 'Pending'),
 (3, 1, 'Complete'),
-(2, 1, 'Awaiting Products');
+(2, 1, 'Awaiting Products'),
+(1, 2, 'Pending'),
+(3, 2, 'Complete'),
+(2, 2, 'Awaiting Products');
 
 -- --------------------------------------------------------
 
@@ -2992,9 +4109,17 @@ CREATE TABLE `op_session` (
 --
 
 INSERT INTO `op_session` (`session_id`, `data`, `expire`) VALUES
+('2a4fb41a144786dd60aaa10cdc', '{\"language\":\"zh-hk\",\"currency\":\"USD\"}', '2018-12-02 14:59:23'),
 ('5497f51cc231d0f0216140bffe', '{\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-12-01 01:42:38'),
+('68fd931f234b266576775b0ec9', '{\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-12-02 04:28:55'),
+('71af374c6c03083f4d66202bff', '{\"language\":\"zh-hk\",\"currency\":\"USD\"}', '2018-12-03 08:29:57'),
+('991e7e403d235bb542e24cab6a', '{\"language\":\"zh-hk\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"iXoyCsPlMkihMp5Pgllgii6ozJeQeiCF\",\"install\":\"9yLaNhbpaZ\"}', '2018-12-03 03:01:29'),
+('a0aa879e74810489783bb3b8c5', '{\"language\":\"zh-hk\",\"currency\":\"USD\"}', '2018-12-02 15:51:44'),
+('a2454d84d06d9885d862edb7a4', '{\"user_id\":\"1\",\"user_token\":\"TD5MbNpUjJRZcjJBWSH46y7bncxJiYXK\"}', '2018-12-02 14:38:02'),
 ('b773a5ea2281e757f0f03877ba', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"user_id\":\"1\",\"user_token\":\"Wku4j46oIZkUDGyM5Ujc8QrbfUeRhvMQ\"}', '2018-12-02 03:32:36'),
-('b807a3077e31190386b55c617e', '{\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-12-01 01:42:37');
+('b807a3077e31190386b55c617e', '{\"language\":\"en-gb\",\"currency\":\"USD\"}', '2018-12-01 01:42:37'),
+('c4a04f0c9ec74df8423c6b320f', '{\"language\":\"zh-hk\",\"currency\":\"USD\"}', '2018-12-02 15:00:18'),
+('e1e44f5249a19a1749b28f016f', '{\"language\":\"zh-hk\",\"currency\":\"USD\"}', '2018-12-02 15:00:22');
 
 -- --------------------------------------------------------
 
@@ -3016,100 +4141,65 @@ CREATE TABLE `op_setting` (
 --
 
 INSERT INTO `op_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
-(1, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(2, 0, 'config', 'config_shared', '0', 0),
-(3, 0, 'config', 'config_secure', '0', 0),
+(995, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(996, 0, 'config', 'config_error_display', '1', 0),
+(997, 0, 'config', 'config_error_log', '1', 0),
+(998, 0, 'config', 'config_error_filename', 'error.log', 0),
+(988, 0, 'config', 'config_compression', '0', 0),
+(989, 0, 'config', 'config_secure', '0', 0),
+(990, 0, 'config', 'config_password', '1', 0),
+(991, 0, 'config', 'config_shared', '0', 0),
+(992, 0, 'config', 'config_encryption', 'jg6iUXXP75kSmRaiuhA2GKELn1HKsXtTSZwtRdMMQRoE5sU9w6QkZXkXRDrYIHuwG4ou6jk2NcAMrNSjQm8tuYjdVagMjuK8smtzqu10dRbDEnKPj2Hkzhz6tBBg4CrLY9QGULXTDzvWY97UAaKNAxzaolhb2xBSOWSPKp1h41BGXwr0UZrhF13prncVpsL77djh3nhf5sNEKg8ch4Or3rZ2PVVZXBgSKdo1yJDTyfbjPgtuQ3I8BdKFX3cLchqaraLAcwgnjcCB2Ly3XvGn4UWpVf46LI5buBp3wxx8wFyqtfnt3Z54Uq0B8VrtwOAqU1dZqpphajkdYqEbX8Qu8bd30bEosq3p8x25X9Gd1RJROg4fzq9mm4sAZGvHeXUA1FfHkJJX6oUMVQ22bQgTBdxLq2o7Ro5TVeTmTUo7OaE9i1jEpYkNsLmh6P9D5no7qwXiR1j8Pk5Us7HVKHwRq1a1zo7nYd2BWWYmRU0n3Z2FYG9JlPA8BibDXuFvDlwBHdsbCyhC1ogW4QIXrYBWXpv747zbQOM5ASY7kYwmB5EJxMhPIjoOGEeQ1bRW3WJR3mdvv3xFtyvm2aOVancEwdL6zsjioUYnKCo1dlBzoVt8tnMTjF3miVBZckw6N1RK0Ro1WRtWTRZ8dgvoxmK5PcnOqhNYq2WOb8sQTW0UUvruofiVkFhZx3RSmz84FKrxiqIhmW2Dg5OqT2mPTMM4V3jYQ88Hfsbm93agxK9XhmniQvmE8WRgg7mdVijhwJNVVoPQRatxxaH9Nt7iicSRqMPJTNAWpq2YzRL1G6stE7FaRJvAN3l5UIVoRbBt4zuhAtWfETvF8HwnLGKeW1CkxjrXXr32BTd5ZTwsyt8wgDGYrOZVULdFKXFQZWkl93I4iXpzq7UNxzT0Ujy4bm7NZyDVW6K24WSN5BnUm6fP2SZm47nJFXBHJKV3lvNRNdmGTS2o2ByZI2sGoxRSd1hnmQejm2Cz04mXoaFLhf3o3XhJi4Mbc1wi7qFFaZ4RhNKN', 0),
+(993, 0, 'config', 'config_file_max_size', '300000', 0),
+(994, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(938, 0, 'config', 'config_review_status', '1', 0),
+(939, 0, 'config', 'config_review_guest', '1', 0),
+(940, 0, 'config', 'config_voucher_min', '1', 0),
+(941, 0, 'config', 'config_voucher_max', '1000', 0),
+(942, 0, 'config', 'config_tax', '1', 0),
+(943, 0, 'config', 'config_tax_default', 'shipping', 0),
+(944, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(945, 0, 'config', 'config_customer_online', '0', 0),
+(946, 0, 'config', 'config_customer_activity', '0', 0),
+(947, 0, 'config', 'config_customer_search', '0', 0),
+(948, 0, 'config', 'config_customer_group_id', '1', 0),
+(949, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
+(950, 0, 'config', 'config_customer_price', '0', 0),
+(951, 0, 'config', 'config_login_attempts', '5', 0),
+(952, 0, 'config', 'config_account_id', '3', 0),
+(953, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+(954, 0, 'config', 'config_cart_weight', '1', 0),
+(955, 0, 'config', 'config_checkout_guest', '1', 0),
+(956, 0, 'config', 'config_checkout_id', '5', 0),
+(957, 0, 'config', 'config_order_status_id', '1', 0),
+(958, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(6, 0, 'config', 'config_fraud_detection', '0', 0),
-(7, 0, 'config', 'config_ftp_status', '0', 0),
-(8, 0, 'config', 'config_ftp_root', '', 0),
-(9, 0, 'config', 'config_ftp_password', '', 0),
-(10, 0, 'config', 'config_ftp_username', '', 0),
-(11, 0, 'config', 'config_ftp_port', '21', 0),
-(12, 0, 'config', 'config_ftp_hostname', '', 0),
-(13, 0, 'config', 'config_meta_title', 'Your Store', 0),
-(14, 0, 'config', 'config_meta_description', 'My Store', 0),
-(15, 0, 'config', 'config_meta_keyword', '', 0),
-(16, 0, 'config', 'config_theme', 'default', 0),
-(17, 0, 'config', 'config_layout_id', '4', 0),
-(18, 0, 'config', 'config_country_id', '222', 0),
-(19, 0, 'config', 'config_zone_id', '3563', 0),
-(20, 0, 'config', 'config_language', 'en-gb', 0),
-(21, 0, 'config', 'config_admin_language', 'en-gb', 0),
-(22, 0, 'config', 'config_currency', 'USD', 0),
-(23, 0, 'config', 'config_currency_auto', '0', 0),
-(24, 0, 'config', 'config_length_class_id', '1', 0),
-(25, 0, 'config', 'config_weight_class_id', '1', 0),
-(26, 0, 'config', 'config_product_count', '1', 0),
-(27, 0, 'config', 'config_limit_admin', '20', 0),
-(28, 0, 'config', 'config_review_status', '1', 0),
-(29, 0, 'config', 'config_review_guest', '1', 0),
-(30, 0, 'config', 'config_voucher_min', '1', 0),
-(31, 0, 'config', 'config_voucher_max', '1000', 0),
-(32, 0, 'config', 'config_tax', '1', 0),
-(33, 0, 'config', 'config_tax_default', 'shipping', 0),
-(34, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(35, 0, 'config', 'config_customer_online', '0', 0),
-(36, 0, 'config', 'config_customer_activity', '0', 0),
-(37, 0, 'config', 'config_customer_search', '0', 0),
-(38, 0, 'config', 'config_customer_group_id', '1', 0),
-(39, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
-(40, 0, 'config', 'config_customer_price', '0', 0),
-(41, 0, 'config', 'config_account_id', '3', 0),
-(42, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(203, 0, 'config', 'config_api_id', '1', 0),
-(44, 0, 'config', 'config_cart_weight', '1', 0),
-(45, 0, 'config', 'config_checkout_guest', '1', 0),
-(46, 0, 'config', 'config_checkout_id', '5', 0),
-(47, 0, 'config', 'config_order_status_id', '1', 0),
-(48, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(49, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(50, 0, 'config', 'config_stock_display', '0', 0),
-(51, 0, 'config', 'config_stock_warning', '0', 0),
-(52, 0, 'config', 'config_stock_checkout', '0', 0),
-(53, 0, 'config', 'config_affiliate_approval', '0', 0),
-(54, 0, 'config', 'config_affiliate_auto', '0', 0),
-(55, 0, 'config', 'config_affiliate_commission', '5', 0),
-(56, 0, 'config', 'config_affiliate_id', '4', 0),
-(57, 0, 'config', 'config_return_id', '0', 0),
-(58, 0, 'config', 'config_return_status_id', '2', 0),
-(59, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(60, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(61, 0, 'config', 'config_comment', '', 0),
-(62, 0, 'config', 'config_open', '', 0),
-(63, 0, 'config', 'config_image', '', 0),
-(64, 0, 'config', 'config_fax', '', 0),
-(65, 0, 'config', 'config_telephone', '123456789', 0),
-(201, 0, 'config', 'config_email', 'devnull@installatron.com', 0),
-(67, 0, 'config', 'config_geocode', '', 0),
-(68, 0, 'config', 'config_owner', 'Your Name', 0),
-(69, 0, 'config', 'config_address', 'Address 1', 0),
-(70, 0, 'config', 'config_name', '$ESBC_HOSTTITLE$', 0),
-(71, 0, 'config', 'config_seo_url', '0', 0),
-(72, 0, 'config', 'config_file_max_size', '300000', 0),
-(73, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(74, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(75, 0, 'config', 'config_maintenance', '0', 0),
-(76, 0, 'config', 'config_password', '1', 0),
-(202, 0, 'config', 'config_encryption', 'jg6iUXXP75kSmRaiuhA2GKELn1HKsXtTSZwtRdMMQRoE5sU9w6QkZXkXRDrYIHuwG4ou6jk2NcAMrNSjQm8tuYjdVagMjuK8smtzqu10dRbDEnKPj2Hkzhz6tBBg4CrLY9QGULXTDzvWY97UAaKNAxzaolhb2xBSOWSPKp1h41BGXwr0UZrhF13prncVpsL77djh3nhf5sNEKg8ch4Or3rZ2PVVZXBgSKdo1yJDTyfbjPgtuQ3I8BdKFX3cLchqaraLAcwgnjcCB2Ly3XvGn4UWpVf46LI5buBp3wxx8wFyqtfnt3Z54Uq0B8VrtwOAqU1dZqpphajkdYqEbX8Qu8bd30bEosq3p8x25X9Gd1RJROg4fzq9mm4sAZGvHeXUA1FfHkJJX6oUMVQ22bQgTBdxLq2o7Ro5TVeTmTUo7OaE9i1jEpYkNsLmh6P9D5no7qwXiR1j8Pk5Us7HVKHwRq1a1zo7nYd2BWWYmRU0n3Z2FYG9JlPA8BibDXuFvDlwBHdsbCyhC1ogW4QIXrYBWXpv747zbQOM5ASY7kYwmB5EJxMhPIjoOGEeQ1bRW3WJR3mdvv3xFtyvm2aOVancEwdL6zsjioUYnKCo1dlBzoVt8tnMTjF3miVBZckw6N1RK0Ro1WRtWTRZ8dgvoxmK5PcnOqhNYq2WOb8sQTW0UUvruofiVkFhZx3RSmz84FKrxiqIhmW2Dg5OqT2mPTMM4V3jYQ88Hfsbm93agxK9XhmniQvmE8WRgg7mdVijhwJNVVoPQRatxxaH9Nt7iicSRqMPJTNAWpq2YzRL1G6stE7FaRJvAN3l5UIVoRbBt4zuhAtWfETvF8HwnLGKeW1CkxjrXXr32BTd5ZTwsyt8wgDGYrOZVULdFKXFQZWkl93I4iXpzq7UNxzT0Ujy4bm7NZyDVW6K24WSN5BnUm6fP2SZm47nJFXBHJKV3lvNRNdmGTS2o2ByZI2sGoxRSd1hnmQejm2Cz04mXoaFLhf3o3XhJi4Mbc1wi7qFFaZ4RhNKN', 0),
-(78, 0, 'config', 'config_compression', '0', 0),
-(79, 0, 'config', 'config_error_display', '1', 0),
-(80, 0, 'config', 'config_error_log', '1', 0),
-(81, 0, 'config', 'config_error_filename', 'error.log', 0),
-(82, 0, 'config', 'config_google_analytics', '', 0),
-(83, 0, 'config', 'config_mail_engine', 'mail', 0),
-(84, 0, 'config', 'config_mail_parameter', '', 0),
-(85, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(86, 0, 'config', 'config_mail_smtp_username', '', 0),
-(87, 0, 'config', 'config_mail_smtp_password', '', 0),
-(88, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(89, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(90, 0, 'config', 'config_mail_alert_email', '', 0),
-(91, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(92, 0, 'config', 'config_captcha', 'basic', 0),
-(93, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(94, 0, 'config', 'config_login_attempts', '5', 0),
+(959, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(960, 0, 'config', 'config_fraud_status_id', '7', 0),
+(961, 0, 'config', 'config_api_id', '1', 0),
+(962, 0, 'config', 'config_stock_display', '0', 0),
+(963, 0, 'config', 'config_stock_warning', '0', 0),
+(964, 0, 'config', 'config_stock_checkout', '0', 0),
+(965, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(966, 0, 'config', 'config_affiliate_approval', '0', 0),
+(967, 0, 'config', 'config_affiliate_auto', '0', 0),
+(968, 0, 'config', 'config_affiliate_commission', '5', 0),
+(969, 0, 'config', 'config_affiliate_id', '4', 0),
+(970, 0, 'config', 'config_return_id', '0', 0),
+(971, 0, 'config', 'config_return_status_id', '2', 0),
+(972, 0, 'config', 'config_captcha', '', 0),
+(973, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(974, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(975, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(976, 0, 'config', 'config_mail_engine', 'mail', 0),
+(977, 0, 'config', 'config_mail_parameter', '', 0),
+(978, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(979, 0, 'config', 'config_mail_smtp_username', '', 0),
+(980, 0, 'config', 'config_mail_smtp_password', '', 0),
+(981, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(982, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(983, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
 (95, 0, 'payment_free_checkout', 'payment_free_checkout_status', '1', 0),
 (96, 0, 'payment_free_checkout', 'free_checkout_order_status_id', '1', 0),
 (97, 0, 'payment_free_checkout', 'payment_free_checkout_sort_order', '1', 0),
@@ -3140,30 +4230,24 @@ INSERT INTO `op_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (122, 0, 'total_coupon', 'total_coupon_status', '1', 0),
 (123, 0, 'module_category', 'module_category_status', '1', 0),
 (124, 0, 'module_account', 'module_account_status', '1', 0),
-(125, 0, 'theme_default', 'theme_default_product_limit', '15', 0),
-(126, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
-(127, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
-(128, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
-(129, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
-(130, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
-(131, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
-(132, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
-(133, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
-(134, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
-(135, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
-(136, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
-(137, 0, 'theme_default', 'theme_default_image_related_width', '200', 0),
-(138, 0, 'theme_default', 'theme_default_image_related_height', '200', 0),
-(139, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
-(140, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
-(141, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
-(142, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
-(143, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
-(144, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
-(145, 0, 'theme_default', 'theme_default_image_location_height', '50', 0),
-(146, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
-(147, 0, 'theme_default', 'theme_default_directory', 'default', 0),
-(148, 0, 'theme_default', 'theme_default_status', '1', 0),
+(807, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
+(808, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
+(809, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
+(810, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
+(811, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
+(812, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
+(813, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
+(814, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
+(815, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
+(825, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
+(823, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
+(824, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
+(822, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
+(819, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
+(820, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
+(821, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
+(818, 0, 'theme_default', 'theme_default_image_related_height', '200', 0),
+(817, 0, 'theme_default', 'theme_default_image_related_width', '200', 0),
 (149, 0, 'dashboard_activity', 'dashboard_activity_status', '1', 0),
 (150, 0, 'dashboard_activity', 'dashboard_activity_sort_order', '7', 0),
 (151, 0, 'dashboard_sale', 'dashboard_sale_status', '1', 0),
@@ -3215,7 +4299,53 @@ INSERT INTO `op_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (197, 0, 'report_marketing', 'report_marketing_status', '1', 0),
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (199, 0, 'developer', 'developer_theme', '1', 0),
-(200, 0, 'developer', 'developer_sass', '1', 0);
+(200, 0, 'developer', 'developer_sass', '1', 0),
+(204, 0, 'pavothemer', 'pavothemer_keepheader', '1', 0),
+(205, 0, 'pavothemer', 'pavothemer_google_map_api_key', 'AIzaSyB9ytDC_XmgWVG7CMMPvNpvz9t58jfu4j0', 0),
+(206, 0, 'pavothemer', 'pavothemer_preview', '1', 0),
+(207, 0, 'pavothemer', 'pavothemer_zoommode', '1', 0),
+(208, 0, 'pavothemer', 'pavothemer_offcanvas', 'category', 0),
+(209, 0, 'pavothemer', 'pavothemer_compresscss', '0', 0),
+(210, 0, 'pavothemer', 'pavothemer_excludecssfiles', '', 0),
+(211, 0, 'pavothemer', 'pavothemer_combinejs', '0', 0),
+(212, 0, 'pavothemer', 'pavothemer_excludejsfiles', '', 0),
+(213, 0, 'pavothemer', 'pavothemer_custom_css', '0', 0),
+(214, 0, 'pavothemer', 'pavothemer_custom_js', '0', 0),
+(826, 0, 'theme_default', 'theme_default_image_location_height', '50', 0),
+(937, 0, 'config', 'config_limit_admin', '20', 0),
+(936, 0, 'config', 'config_product_count', '1', 0),
+(935, 0, 'config', 'config_weight_class_id', '1', 0),
+(934, 0, 'config', 'config_length_class_id', '1', 0),
+(816, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
+(806, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
+(805, 0, 'theme_default', 'theme_default_product_limit', '15', 0),
+(804, 0, 'theme_default', 'theme_default_status', '1', 0),
+(984, 0, 'config', 'config_mail_alert_email', '', 0),
+(985, 0, 'config', 'config_maintenance', '0', 0),
+(986, 0, 'config', 'config_seo_url', '0', 0),
+(987, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(933, 0, 'config', 'config_currency_auto', '0', 0),
+(932, 0, 'config', 'config_currency', 'USD', 0),
+(931, 0, 'config', 'config_admin_language', 'zh-hk', 0),
+(930, 0, 'config', 'config_language', 'zh-hk', 0),
+(929, 0, 'config', 'config_zone_id', '3563', 0),
+(928, 0, 'config', 'config_country_id', '222', 0),
+(927, 0, 'config', 'config_comment', '', 0),
+(926, 0, 'config', 'config_open', '', 0),
+(925, 0, 'config', 'config_image', 'catalog/logo.png', 0),
+(924, 0, 'config', 'config_fax', '', 0),
+(923, 0, 'config', 'config_telephone', '123456789', 0),
+(922, 0, 'config', 'config_email', 'devnull@installatron.com', 0),
+(921, 0, 'config', 'config_geocode', '', 0),
+(920, 0, 'config', 'config_address', 'Address 1', 0),
+(919, 0, 'config', 'config_owner', 'Your Name', 0),
+(918, 0, 'config', 'config_name', '$ESBC_HOSTTITLE$', 0),
+(917, 0, 'config', 'config_layout_id', '4', 0),
+(916, 0, 'config', 'config_theme', 'default', 0),
+(915, 0, 'config', 'config_meta_keyword', '', 0),
+(914, 0, 'config', 'config_meta_description', 'My Store', 0),
+(913, 0, 'config', 'config_meta_title', 'Your Store', 0),
+(803, 0, 'theme_default', 'theme_default_directory', 'wnweb', 0);
 
 -- --------------------------------------------------------
 
@@ -3287,7 +4417,11 @@ INSERT INTO `op_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 (7, 1, 'In Stock'),
 (8, 1, 'Pre-Order'),
 (5, 1, 'Out Of Stock'),
-(6, 1, '2-3 Days');
+(6, 1, '2-3 Days'),
+(7, 2, 'In Stock'),
+(8, 2, 'Pre-Order'),
+(5, 2, 'Out Of Stock'),
+(6, 2, '2-3 Days');
 
 -- --------------------------------------------------------
 
@@ -3463,7 +4597,7 @@ CREATE TABLE `op_user` (
 --
 
 INSERT INTO `op_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'ESBCadmin', '8bfdbb2e05c740c26780158ce14ca531', 'vDoIL8vyg', 'John', 'Doe', 'pengyauwang@hotmail.com', '', '', '81.90.188.109', 1, '2018-11-30 18:18:36');
+(1, 1, 'ESBCadmin', '8bfdbb2e05c740c26780158ce14ca531', 'vDoIL8vyg', 'Equal', 'Smart', 'pengyauwang@hotmail.com', 'catalog/equalsmart logo2.jpg', '', '81.90.188.109', 1, '2018-11-30 18:18:36');
 
 -- --------------------------------------------------------
 
@@ -3482,7 +4616,7 @@ CREATE TABLE `op_user_group` (
 --
 
 INSERT INTO `op_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/theme\",\"design\\/translation\",\"design\\/seo_url\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/marketing\\/remarketing\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/worldpay\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/payment\\/pp_braintree\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/theme\",\"design\\/translation\",\"design\\/seo_url\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/marketing\\/remarketing\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/worldpay\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/payment\\/pp_braintree\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/event\",\"marketplace\\/api\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\"]}'),
+(1, 'Administrator', '{\"access\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/theme\",\"design\\/translation\",\"design\\/seo_url\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/marketing\\/remarketing\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/worldpay\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/payment\\/pp_braintree\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/api\",\"marketplace\\/event\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/theme\\/pav_celo\",\"extension\\/theme\\/pav_celo\",\"extension\\/module\\/pavothemer\",\"extension\\/module\\/pavothemer\\/edit\",\"extension\\/module\\/pavothemer\\/customize\",\"extension\\/module\\/pavothemer\\/tools\",\"extension\\/module\\/pavothemer\\/management\",\"extension\\/module\\/pavobuilder\",\"extension\\/module\\/pavoheader\",\"extension\\/module\\/pavoheader\",\"extension\\/module\\/pavoheader\\/edit\"],\"modify\":[\"catalog\\/attribute\",\"catalog\\/attribute_group\",\"catalog\\/category\",\"catalog\\/download\",\"catalog\\/filter\",\"catalog\\/information\",\"catalog\\/manufacturer\",\"catalog\\/option\",\"catalog\\/product\",\"catalog\\/recurring\",\"catalog\\/review\",\"common\\/column_left\",\"common\\/developer\",\"common\\/filemanager\",\"common\\/profile\",\"common\\/security\",\"customer\\/custom_field\",\"customer\\/customer\",\"customer\\/customer_approval\",\"customer\\/customer_group\",\"design\\/banner\",\"design\\/layout\",\"design\\/theme\",\"design\\/translation\",\"design\\/seo_url\",\"event\\/statistics\",\"event\\/theme\",\"extension\\/analytics\\/google\",\"extension\\/captcha\\/basic\",\"extension\\/captcha\\/google\",\"extension\\/dashboard\\/activity\",\"extension\\/dashboard\\/chart\",\"extension\\/dashboard\\/customer\",\"extension\\/dashboard\\/map\",\"extension\\/dashboard\\/online\",\"extension\\/dashboard\\/order\",\"extension\\/dashboard\\/recent\",\"extension\\/dashboard\\/sale\",\"extension\\/extension\\/analytics\",\"extension\\/extension\\/captcha\",\"extension\\/extension\\/dashboard\",\"extension\\/extension\\/feed\",\"extension\\/extension\\/fraud\",\"extension\\/extension\\/menu\",\"extension\\/extension\\/module\",\"extension\\/extension\\/payment\",\"extension\\/extension\\/report\",\"extension\\/extension\\/shipping\",\"extension\\/extension\\/theme\",\"extension\\/extension\\/total\",\"extension\\/feed\\/google_base\",\"extension\\/feed\\/google_sitemap\",\"extension\\/feed\\/openbaypro\",\"extension\\/fraud\\/fraudlabspro\",\"extension\\/fraud\\/ip\",\"extension\\/fraud\\/maxmind\",\"extension\\/marketing\\/remarketing\",\"extension\\/module\\/account\",\"extension\\/module\\/amazon_login\",\"extension\\/module\\/amazon_pay\",\"extension\\/module\\/banner\",\"extension\\/module\\/bestseller\",\"extension\\/module\\/carousel\",\"extension\\/module\\/category\",\"extension\\/module\\/divido_calculator\",\"extension\\/module\\/ebay_listing\",\"extension\\/module\\/featured\",\"extension\\/module\\/filter\",\"extension\\/module\\/google_hangouts\",\"extension\\/module\\/html\",\"extension\\/module\\/information\",\"extension\\/module\\/klarna_checkout_module\",\"extension\\/module\\/latest\",\"extension\\/module\\/laybuy_layout\",\"extension\\/module\\/pilibaba_button\",\"extension\\/module\\/pp_button\",\"extension\\/module\\/pp_login\",\"extension\\/module\\/sagepay_direct_cards\",\"extension\\/module\\/sagepay_server_cards\",\"extension\\/module\\/slideshow\",\"extension\\/module\\/special\",\"extension\\/module\\/store\",\"extension\\/openbay\\/amazon\",\"extension\\/openbay\\/amazon_listing\",\"extension\\/openbay\\/amazon_product\",\"extension\\/openbay\\/amazonus\",\"extension\\/openbay\\/amazonus_listing\",\"extension\\/openbay\\/amazonus_product\",\"extension\\/openbay\\/ebay\",\"extension\\/openbay\\/ebay_profile\",\"extension\\/openbay\\/ebay_template\",\"extension\\/openbay\\/etsy\",\"extension\\/openbay\\/etsy_product\",\"extension\\/openbay\\/etsy_shipping\",\"extension\\/openbay\\/etsy_shop\",\"extension\\/openbay\\/fba\",\"extension\\/payment\\/amazon_login_pay\",\"extension\\/payment\\/authorizenet_aim\",\"extension\\/payment\\/authorizenet_sim\",\"extension\\/payment\\/bank_transfer\",\"extension\\/payment\\/bluepay_hosted\",\"extension\\/payment\\/bluepay_redirect\",\"extension\\/payment\\/cardconnect\",\"extension\\/payment\\/cardinity\",\"extension\\/payment\\/cheque\",\"extension\\/payment\\/cod\",\"extension\\/payment\\/divido\",\"extension\\/payment\\/eway\",\"extension\\/payment\\/firstdata\",\"extension\\/payment\\/firstdata_remote\",\"extension\\/payment\\/free_checkout\",\"extension\\/payment\\/g2apay\",\"extension\\/payment\\/globalpay\",\"extension\\/payment\\/globalpay_remote\",\"extension\\/payment\\/klarna_account\",\"extension\\/payment\\/klarna_checkout\",\"extension\\/payment\\/klarna_invoice\",\"extension\\/payment\\/laybuy\",\"extension\\/payment\\/liqpay\",\"extension\\/payment\\/nochex\",\"extension\\/payment\\/paymate\",\"extension\\/payment\\/paypoint\",\"extension\\/payment\\/payza\",\"extension\\/payment\\/perpetual_payments\",\"extension\\/payment\\/pilibaba\",\"extension\\/payment\\/pp_express\",\"extension\\/payment\\/pp_payflow\",\"extension\\/payment\\/pp_payflow_iframe\",\"extension\\/payment\\/pp_pro\",\"extension\\/payment\\/pp_pro_iframe\",\"extension\\/payment\\/pp_standard\",\"extension\\/payment\\/realex\",\"extension\\/payment\\/realex_remote\",\"extension\\/payment\\/sagepay_direct\",\"extension\\/payment\\/sagepay_server\",\"extension\\/payment\\/sagepay_us\",\"extension\\/payment\\/securetrading_pp\",\"extension\\/payment\\/securetrading_ws\",\"extension\\/payment\\/skrill\",\"extension\\/payment\\/twocheckout\",\"extension\\/payment\\/web_payment_software\",\"extension\\/payment\\/worldpay\",\"extension\\/module\\/pp_braintree_button\",\"extension\\/payment\\/pp_braintree\",\"extension\\/report\\/customer_activity\",\"extension\\/report\\/customer_order\",\"extension\\/report\\/customer_reward\",\"extension\\/report\\/customer_search\",\"extension\\/report\\/customer_transaction\",\"extension\\/report\\/marketing\",\"extension\\/report\\/product_purchased\",\"extension\\/report\\/product_viewed\",\"extension\\/report\\/sale_coupon\",\"extension\\/report\\/sale_order\",\"extension\\/report\\/sale_return\",\"extension\\/report\\/sale_shipping\",\"extension\\/report\\/sale_tax\",\"extension\\/shipping\\/auspost\",\"extension\\/shipping\\/citylink\",\"extension\\/shipping\\/ec_ship\",\"extension\\/shipping\\/fedex\",\"extension\\/shipping\\/flat\",\"extension\\/shipping\\/free\",\"extension\\/shipping\\/item\",\"extension\\/shipping\\/parcelforce_48\",\"extension\\/shipping\\/pickup\",\"extension\\/shipping\\/royal_mail\",\"extension\\/shipping\\/ups\",\"extension\\/shipping\\/usps\",\"extension\\/shipping\\/weight\",\"extension\\/theme\\/default\",\"extension\\/total\\/coupon\",\"extension\\/total\\/credit\",\"extension\\/total\\/handling\",\"extension\\/total\\/klarna_fee\",\"extension\\/total\\/low_order_fee\",\"extension\\/total\\/reward\",\"extension\\/total\\/shipping\",\"extension\\/total\\/sub_total\",\"extension\\/total\\/tax\",\"extension\\/total\\/total\",\"extension\\/total\\/voucher\",\"localisation\\/country\",\"localisation\\/currency\",\"localisation\\/geo_zone\",\"localisation\\/language\",\"localisation\\/length_class\",\"localisation\\/location\",\"localisation\\/order_status\",\"localisation\\/return_action\",\"localisation\\/return_reason\",\"localisation\\/return_status\",\"localisation\\/stock_status\",\"localisation\\/tax_class\",\"localisation\\/tax_rate\",\"localisation\\/weight_class\",\"localisation\\/zone\",\"mail\\/affiliate\",\"mail\\/customer\",\"mail\\/forgotten\",\"mail\\/return\",\"mail\\/reward\",\"mail\\/transaction\",\"marketing\\/contact\",\"marketing\\/coupon\",\"marketing\\/marketing\",\"marketplace\\/event\",\"marketplace\\/api\",\"marketplace\\/extension\",\"marketplace\\/install\",\"marketplace\\/installer\",\"marketplace\\/marketplace\",\"marketplace\\/modification\",\"marketplace\\/openbay\",\"report\\/online\",\"report\\/report\",\"report\\/statistics\",\"sale\\/order\",\"sale\\/recurring\",\"sale\\/return\",\"sale\\/voucher\",\"sale\\/voucher_theme\",\"setting\\/setting\",\"setting\\/store\",\"startup\\/error\",\"startup\\/event\",\"startup\\/login\",\"startup\\/permission\",\"startup\\/router\",\"startup\\/sass\",\"startup\\/startup\",\"tool\\/backup\",\"tool\\/log\",\"tool\\/upload\",\"user\\/api\",\"user\\/user\",\"user\\/user_permission\",\"extension\\/theme\\/pav_celo\",\"extension\\/theme\\/pav_celo\",\"extension\\/module\\/pavothemer\",\"extension\\/module\\/pavothemer\\/edit\",\"extension\\/module\\/pavothemer\\/customize\",\"extension\\/module\\/pavothemer\\/tools\",\"extension\\/module\\/pavothemer\\/management\",\"extension\\/module\\/pavobuilder\",\"extension\\/module\\/pavoheader\",\"extension\\/module\\/pavoheader\",\"extension\\/module\\/pavoheader\\/edit\"]}'),
 (10, 'Demonstration', '');
 
 -- --------------------------------------------------------
@@ -3559,7 +4693,10 @@ CREATE TABLE `op_voucher_theme_description` (
 INSERT INTO `op_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 (6, 1, 'Christmas'),
 (7, 1, 'Birthday'),
-(8, 1, 'General');
+(8, 1, 'General'),
+(6, 2, 'Christmas'),
+(7, 2, 'Birthday'),
+(8, 2, 'General');
 
 -- --------------------------------------------------------
 
@@ -3603,7 +4740,11 @@ INSERT INTO `op_weight_class_description` (`weight_class_id`, `language_id`, `ti
 (1, 1, 'Kilogram', 'kg'),
 (2, 1, 'Gram', 'g'),
 (5, 1, 'Pound ', 'lb'),
-(6, 1, 'Ounce', 'oz');
+(6, 1, 'Ounce', 'oz'),
+(1, 2, 'Kilogram', 'kg'),
+(2, 2, 'Gram', 'g'),
+(5, 2, 'Pound ', 'lb'),
+(6, 2, 'Ounce', 'oz');
 
 -- --------------------------------------------------------
 
@@ -8379,6 +9520,12 @@ ALTER TABLE `op_order_voucher`
   ADD PRIMARY KEY (`order_voucher_id`);
 
 --
+-- 資料表索引 `op_pavobuilder`
+--
+ALTER TABLE `op_pavobuilder`
+  ADD PRIMARY KEY (`module_uniqid_id`);
+
+--
 -- 資料表索引 `op_product`
 --
 ALTER TABLE `op_product`
@@ -8683,548 +9830,456 @@ ALTER TABLE `op_zone_to_geo_zone`
 --
 ALTER TABLE `op_address`
   MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_api`
 --
 ALTER TABLE `op_api`
   MODIFY `api_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_api_ip`
 --
 ALTER TABLE `op_api_ip`
   MODIFY `api_ip_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_api_session`
 --
 ALTER TABLE `op_api_session`
   MODIFY `api_session_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_attribute`
 --
 ALTER TABLE `op_attribute`
   MODIFY `attribute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_attribute_group`
 --
 ALTER TABLE `op_attribute_group`
   MODIFY `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_banner`
 --
 ALTER TABLE `op_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_banner_image`
 --
 ALTER TABLE `op_banner_image`
-  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
-
+  MODIFY `banner_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 --
 -- 使用資料表 AUTO_INCREMENT `op_cart`
 --
 ALTER TABLE `op_cart`
   MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_category`
 --
 ALTER TABLE `op_category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_country`
 --
 ALTER TABLE `op_country`
   MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_coupon`
 --
 ALTER TABLE `op_coupon`
   MODIFY `coupon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_coupon_history`
 --
 ALTER TABLE `op_coupon_history`
   MODIFY `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_coupon_product`
 --
 ALTER TABLE `op_coupon_product`
   MODIFY `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_currency`
 --
 ALTER TABLE `op_currency`
   MODIFY `currency_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer`
 --
 ALTER TABLE `op_customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_activity`
 --
 ALTER TABLE `op_customer_activity`
   MODIFY `customer_activity_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_approval`
 --
 ALTER TABLE `op_customer_approval`
   MODIFY `customer_approval_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_group`
 --
 ALTER TABLE `op_customer_group`
   MODIFY `customer_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_history`
 --
 ALTER TABLE `op_customer_history`
   MODIFY `customer_history_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_ip`
 --
 ALTER TABLE `op_customer_ip`
   MODIFY `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_login`
 --
 ALTER TABLE `op_customer_login`
   MODIFY `customer_login_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_reward`
 --
 ALTER TABLE `op_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_search`
 --
 ALTER TABLE `op_customer_search`
   MODIFY `customer_search_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_customer_transaction`
 --
 ALTER TABLE `op_customer_transaction`
   MODIFY `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_custom_field`
 --
 ALTER TABLE `op_custom_field`
   MODIFY `custom_field_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_custom_field_value`
 --
 ALTER TABLE `op_custom_field_value`
   MODIFY `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_download`
 --
 ALTER TABLE `op_download`
   MODIFY `download_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_event`
 --
 ALTER TABLE `op_event`
   MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_extension`
 --
 ALTER TABLE `op_extension`
-  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- 使用資料表 AUTO_INCREMENT `op_extension_install`
 --
 ALTER TABLE `op_extension_install`
-  MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `extension_install_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- 使用資料表 AUTO_INCREMENT `op_extension_path`
 --
 ALTER TABLE `op_extension_path`
-  MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `extension_path_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1489;
 --
 -- 使用資料表 AUTO_INCREMENT `op_filter`
 --
 ALTER TABLE `op_filter`
   MODIFY `filter_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_filter_group`
 --
 ALTER TABLE `op_filter_group`
   MODIFY `filter_group_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_geo_zone`
 --
 ALTER TABLE `op_geo_zone`
   MODIFY `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_information`
 --
 ALTER TABLE `op_information`
   MODIFY `information_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_language`
 --
 ALTER TABLE `op_language`
-  MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `language_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用資料表 AUTO_INCREMENT `op_layout`
 --
 ALTER TABLE `op_layout`
   MODIFY `layout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_layout_module`
 --
 ALTER TABLE `op_layout_module`
   MODIFY `layout_module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_layout_route`
 --
 ALTER TABLE `op_layout_route`
   MODIFY `layout_route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_length_class`
 --
 ALTER TABLE `op_length_class`
   MODIFY `length_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_location`
 --
 ALTER TABLE `op_location`
   MODIFY `location_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_manufacturer`
 --
 ALTER TABLE `op_manufacturer`
   MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_marketing`
 --
 ALTER TABLE `op_marketing`
   MODIFY `marketing_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_modification`
 --
 ALTER TABLE `op_modification`
-  MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `modification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- 使用資料表 AUTO_INCREMENT `op_module`
 --
 ALTER TABLE `op_module`
   MODIFY `module_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_option`
 --
 ALTER TABLE `op_option`
   MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_option_value`
 --
 ALTER TABLE `op_option_value`
   MODIFY `option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order`
 --
 ALTER TABLE `op_order`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_history`
 --
 ALTER TABLE `op_order_history`
   MODIFY `order_history_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_option`
 --
 ALTER TABLE `op_order_option`
   MODIFY `order_option_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_product`
 --
 ALTER TABLE `op_order_product`
   MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_recurring`
 --
 ALTER TABLE `op_order_recurring`
   MODIFY `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_recurring_transaction`
 --
 ALTER TABLE `op_order_recurring_transaction`
   MODIFY `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_shipment`
 --
 ALTER TABLE `op_order_shipment`
   MODIFY `order_shipment_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_status`
 --
 ALTER TABLE `op_order_status`
   MODIFY `order_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_total`
 --
 ALTER TABLE `op_order_total`
   MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_order_voucher`
 --
 ALTER TABLE `op_order_voucher`
   MODIFY `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product`
 --
 ALTER TABLE `op_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_discount`
 --
 ALTER TABLE `op_product_discount`
   MODIFY `product_discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_image`
 --
 ALTER TABLE `op_product_image`
   MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2352;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_option`
 --
 ALTER TABLE `op_product_option`
   MODIFY `product_option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_option_value`
 --
 ALTER TABLE `op_product_option_value`
   MODIFY `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_reward`
 --
 ALTER TABLE `op_product_reward`
   MODIFY `product_reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=546;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_product_special`
 --
 ALTER TABLE `op_product_special`
   MODIFY `product_special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=440;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_recurring`
 --
 ALTER TABLE `op_recurring`
   MODIFY `recurring_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_return`
 --
 ALTER TABLE `op_return`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_return_action`
 --
 ALTER TABLE `op_return_action`
   MODIFY `return_action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_return_history`
 --
 ALTER TABLE `op_return_history`
   MODIFY `return_history_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_return_reason`
 --
 ALTER TABLE `op_return_reason`
   MODIFY `return_reason_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_return_status`
 --
 ALTER TABLE `op_return_status`
   MODIFY `return_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_review`
 --
 ALTER TABLE `op_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_seo_url`
 --
 ALTER TABLE `op_seo_url`
   MODIFY `seo_url_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=844;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_setting`
 --
 ALTER TABLE `op_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
-
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=999;
 --
 -- 使用資料表 AUTO_INCREMENT `op_statistics`
 --
 ALTER TABLE `op_statistics`
   MODIFY `statistics_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_stock_status`
 --
 ALTER TABLE `op_stock_status`
   MODIFY `stock_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_store`
 --
 ALTER TABLE `op_store`
   MODIFY `store_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_tax_class`
 --
 ALTER TABLE `op_tax_class`
   MODIFY `tax_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_tax_rate`
 --
 ALTER TABLE `op_tax_rate`
   MODIFY `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_tax_rule`
 --
 ALTER TABLE `op_tax_rule`
   MODIFY `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_theme`
 --
 ALTER TABLE `op_theme`
   MODIFY `theme_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_translation`
 --
 ALTER TABLE `op_translation`
   MODIFY `translation_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_upload`
 --
 ALTER TABLE `op_upload`
   MODIFY `upload_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_user`
 --
 ALTER TABLE `op_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_user_group`
 --
 ALTER TABLE `op_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_voucher`
 --
 ALTER TABLE `op_voucher`
   MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_voucher_history`
 --
 ALTER TABLE `op_voucher_history`
   MODIFY `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_voucher_theme`
 --
 ALTER TABLE `op_voucher_theme`
   MODIFY `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_weight_class`
 --
 ALTER TABLE `op_weight_class`
   MODIFY `weight_class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_zone`
 --
 ALTER TABLE `op_zone`
   MODIFY `zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4239;
-
 --
 -- 使用資料表 AUTO_INCREMENT `op_zone_to_geo_zone`
 --
 ALTER TABLE `op_zone_to_geo_zone`
   MODIFY `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
